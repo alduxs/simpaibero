@@ -7,7 +7,7 @@
             <li><a href="/#empresa">Simpa</a></li>
             <li><a href="/#servicios">Servicios</a></li>
             <li><a href="/#productos">Productos</a></li>
-            <li><a href="/">Clientes</a></li>
+            <li><a href="/">Posventa</a></li>
             <li><a href="/#contacto">Contactos</a></li>
         </ul>
     </nav>

@@ -9,7 +9,7 @@
             <div class="row">
 
                 <div class="col-12 col-md-12 col-lg-10 offset-lg-1">
-                    <p> <a href="#" class="back"><i class="fa-solid fa-chevron-left"></i> Volver</a> </p>
+                    <p> <a href="javascript:history.go(-1)" class="back"><i class="fa-solid fa-chevron-left"></i> Volver</a> </p>
                 </div>
                 @if((count($images)>0))
 
