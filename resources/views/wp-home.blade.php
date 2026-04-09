@@ -171,8 +171,27 @@
                         data-aos-delay="200" data-aos-duration="1000">
                         <img src="assets/images/postventa.jpg" class="card-img-top" style="border-radius: 0;">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $texts[6]->textName; }}</h5>
-                            <p class="card-text">{!! $texts[6]->textContent; !!}</p>
+                            <h5 class="card-title">Posventa</h5>
+                            <p class="card-text">Respaldo técnico para una red de distribución sólida</p>
+                            <p>En SIMPA Iberoamericana S.A. concebimos el servicio de post venta como un soporte estratégico orientado a nuestros distribuidores, clave para garantizar la calidad, confiabilidad y reputación de cada solución que comercializan.</p>
+                            <p>Nuestro enfoque está diseñado para fortalecer la cadena de valor, brindando herramientas técnicas, asistencia especializada y respuestas eficientes que permiten a nuestros socios operar con seguridad, autonomía y respaldo.</p>
+                            <p>¿Qué brindamos a nuestra red de distribuidores?</p>
+                            <p>• Asistencia técnica especializada</p>
+
+                            <p>Soporte técnico profesional para diagnóstico y resolución de incidencias, orientado a respaldar la correcta operación de los equipos comercializados.</p>
+                            <p>• Soporte técnico documental</p>
+                            <p>Manuales, especificaciones técnicas, protocolos de uso y mantenimiento que facilitan una gestión clara y estandarizada.</p>
+                            <p>• Gestión de repuestos y componentes</p>
+                            <p>Abastecimiento confiable y asesoramiento técnico para garantizar compatibilidad, seguridad operativa y continuidad del servicio.</p>
+                            <p>• Capacitación técnica para distribuidores</p>
+                            <p>Instancias de formación orientadas a fortalecer el conocimiento del producto, optimizar la atención y elevar el estándar de servicio de la red.</p>
+                            <p>• Canales de contacto ágiles y profesionales</p>
+                            <p>Comunicación directa, ordenada y resolutiva, pensada para acompañar a nuestros distribuidores en cada requerimiento técnico.</p>
+                            <p>Nuestro compromiso</p>
+                            <p>En SIMPA trabajamos para que cada distribuidor cuente con el respaldo técnico necesario para representar nuestra marca con confianza. Creemos en relaciones comerciales basadas en la cooperación, la transparencia y el soporte profesional continuo, porque el crecimiento sostenido se construye en conjunto.</p>
+
+
+
                         </div>
                     </div>
                 </div>
