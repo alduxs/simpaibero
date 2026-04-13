@@ -148,50 +148,66 @@
     <!--Seccion 6-->
     <section class="model1b"
         style="background-image: url('assets/images/logo-fondo-linea.png');background-repeat: no-repeat;background-position: left center;"
-        id="servicios">
+        id="servicios" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
         <div class="container">
 
             <div class="row">
 
-                <div class="col-12 col-md-6 col-lg-5 offset-lg-1">
+                <div class="col-12">
+                    <div class="card mb-3 shadow-box border-color-secondary" style="border-radius: 0;"
+                        >
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="assets/images/preventa.jpg" class="card-img-top" style="border-radius: 0;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $texts[5]->textName; }}</h5>
+                                    <p class="card-text">{!! $texts[5]->textContent; !!}</p>
 
-                    <div class="card shadow-box separacion-2-columnas border-color-secondary" style="border-radius: 0;"
-                        data-aos="fade-right" data-aos-delay="0" data-aos-duration="1000">
-                        <img src="assets/images/preventa.jpg" class="card-img-top" style="border-radius: 0;">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $texts[5]->textName; }}</h5>
-                            <p class="card-text">{!! $texts[5]->textContent; !!}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-5">
 
-                    <div class="card shadow-box border-color-secondary" style="border-radius: 0;" data-aos="fade-right"
-                        data-aos-delay="200" data-aos-duration="1000">
-                        <img src="assets/images/postventa.jpg" class="card-img-top" style="border-radius: 0;">
-                        <div class="card-body">
-                            <h5 class="card-title">Posventa</h5>
-                            <p class="card-text">Respaldo técnico para una red de distribución sólida</p>
-                            <p>En SIMPA Iberoamericana S.A. concebimos el servicio de post venta como un soporte estratégico orientado a nuestros distribuidores, clave para garantizar la calidad, confiabilidad y reputación de cada solución que comercializan.</p>
-                            <p>Nuestro enfoque está diseñado para fortalecer la cadena de valor, brindando herramientas técnicas, asistencia especializada y respuestas eficientes que permiten a nuestros socios operar con seguridad, autonomía y respaldo.</p>
-                            <p>¿Qué brindamos a nuestra red de distribuidores?</p>
-                            <p>• Asistencia técnica especializada</p>
+                <div class="col-12" id="posventa">
+                    <div class="card mb-3 shadow-box border-color-secondary" style="border-radius: 0;"
+                        >
+                        <div class="row g-0">
+                            <div class="col-md-4" >
+                                <img src="assets/images/postventa.jpg" class="card-img-top" style="border-radius: 0;" id="imgposventa">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <div class="card-cont" id="cardcontent">
+                                        <h5 class="card-title">Posventa</h5>
+                                        <p class="card-text">Respaldo técnico para una red de distribución sólida</p>
+                                        <p>En <strong>SIMPA Iberoamericana S.A.</strong> concebimos el servicio de post venta como un soporte estratégico orientado a nuestros distribuidores, clave para garantizar la calidad, confiabilidad y reputación de cada solución que comercializan.</p>
+                                        <p>Nuestro enfoque está diseñado para fortalecer la cadena de valor, brindando herramientas técnicas, asistencia especializada y respuestas eficientes que permiten a nuestros socios operar con seguridad, autonomía y respaldo.</p>
 
-                            <p>Soporte técnico profesional para diagnóstico y resolución de incidencias, orientado a respaldar la correcta operación de los equipos comercializados.</p>
-                            <p>• Soporte técnico documental</p>
-                            <p>Manuales, especificaciones técnicas, protocolos de uso y mantenimiento que facilitan una gestión clara y estandarizada.</p>
-                            <p>• Gestión de repuestos y componentes</p>
-                            <p>Abastecimiento confiable y asesoramiento técnico para garantizar compatibilidad, seguridad operativa y continuidad del servicio.</p>
-                            <p>• Capacitación técnica para distribuidores</p>
-                            <p>Instancias de formación orientadas a fortalecer el conocimiento del producto, optimizar la atención y elevar el estándar de servicio de la red.</p>
-                            <p>• Canales de contacto ágiles y profesionales</p>
-                            <p>Comunicación directa, ordenada y resolutiva, pensada para acompañar a nuestros distribuidores en cada requerimiento técnico.</p>
-                            <p>Nuestro compromiso</p>
-                            <p>En SIMPA trabajamos para que cada distribuidor cuente con el respaldo técnico necesario para representar nuestra marca con confianza. Creemos en relaciones comerciales basadas en la cooperación, la transparencia y el soporte profesional continuo, porque el crecimiento sostenido se construye en conjunto.</p>
+                                        <div style="display: none" id="divtext">
+                                        <p><strong>¿Qué brindamos a nuestra red de distribuidores?</strong></p>
+                                        <p><img src="https://simpaibero.com/newweb/assets/img/tilde.png" alt="Icono"> Asistencia técnica especializada</p>
+                                        <p>Soporte técnico profesional para diagnóstico y resolución de incidencias, orientado a respaldar la correcta operación de los equipos comercializados.</p>
+                                        <p><img src="https://simpaibero.com/newweb/assets/img/tilde.png" alt="Icono"> Soporte técnico documental</p>
+                                        <p>Manuales, especificaciones técnicas, protocolos de uso y mantenimiento que facilitan una gestión clara y estandarizada.</p>
+                                        <p><img src="https://simpaibero.com/newweb/assets/img/tilde.png" alt="Icono"> Gestión de repuestos y componentes</p>
+                                        <p>Abastecimiento confiable y asesoramiento técnico para garantizar compatibilidad, seguridad operativa y continuidad del servicio.</p>
+                                        <p><img src="https://simpaibero.com/newweb/assets/img/tilde.png" alt="Icono"> Capacitación técnica para distribuidores</p>
+                                        <p>Instancias de formación orientadas a fortalecer el conocimiento del producto, optimizar la atención y elevar el estándar de servicio de la red.</p>
+                                        <p><img src="https://simpaibero.com/newweb/assets/img/tilde.png" alt="Icono"> Canales de contacto ágiles y profesionales</p>
+                                        <p>Comunicación directa, ordenada y resolutiva, pensada para acompañar a nuestros distribuidores en cada requerimiento técnico.</p>
+                                        <p><strong>Nuestro compromiso</strong></p>
+                                        <p>En <strong>SIMPA</strong> trabajamos para que cada distribuidor cuente con el respaldo técnico necesario para representar nuestra marca con confianza. Creemos en relaciones comerciales basadas en la cooperación, la transparencia y el soporte profesional continuo, porque el crecimiento sostenido  construye en conjunto.</p>
+                                        </div>
 
+                                        <div class="shadow" id="divshadow"> <span class="mascontent"> + </span> </div>
+                                    </div>
 
-
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -220,7 +236,7 @@
         <div class="contenedor-b">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-lg-10 offset-lg-1" data-aos="fade-right" data-aos-delay="200"
+                    <div class="col-12 col-lg-10 offset-lg-1" data-aos="fade-right" data-aos-delay="50"
                         data-aos-duration="1000">
                         {!! $texts[8]->textContent; !!}
                     </div>
@@ -241,7 +257,7 @@
 
                 <div class="col-12 col-lg-8 offset-lg-1">
 
-                    <div class="contenido-texto" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
+                    <div class="contenido-texto" data-aos="fade-right" data-aos-delay="50" data-aos-duration="50">
                         <h2>{{ $texts[9]->textName; }}</h2>
                         {!! $texts[9]->textContent; !!}
                         <p data-aos="fade" data-aos-delay="500" data-aos-duration="500"><a href="/#contacto"
@@ -295,7 +311,7 @@
 
             <div class="row">
 
-                <div class="col-12 col-lg-10 offset-lg-1" data-aos="fade-right" data-aos-delay="10"
+                <div class="col-12 col-lg-10 offset-lg-1" data-aos="fade-right" data-aos-delay="50"
                     data-aos-duration="500">
 
                     <h2>{{ $texts[11]->textName; }}</h2>

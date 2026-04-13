@@ -53,10 +53,10 @@
 
 
     <!-- Main -->
-    <script src="/assets/js/main.js"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 
     <!-- Main -->
-    <script src="/assets/js/animacion.js"></script>
+    <script src="{{ asset('assets/js/animacion.js') }}"></script>
 
     <!-- Imagenes  -->
     <script src="{{ asset('assets/js/unproducto.js') }}"></script>

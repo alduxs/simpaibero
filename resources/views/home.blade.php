@@ -30,6 +30,8 @@
                                         Bienvenido al administrador de contenidos de la web.
                                     </p>
 
+
+
                                 </div>
                             </div>
                             <!-- end col -->
