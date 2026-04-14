@@ -1,0 +1,207 @@
+.header-home-int {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  justify-items: center;
+  display: grid;
+  overflow: hidden;
+  align-content: space-between;
+  .top-navigation {
+    background-color: $bg-primary-color;
+    padding: 20px 20px;
+    width: 100%;
+    @include grid(grid, 35% 35% 15% 15%);
+    position: relative;
+    z-index: 2050;
+    .logo {
+      padding: 5px 0px;
+      order: 1;
+    }
+    .menu {
+      background-color: $bg-primary-color;
+      position: fixed;
+      top: 0;
+      right: -300px;
+      height: 100%;
+      padding: 30px 50px;
+      display: flex;
+      align-items: center;
+      z-index: 2100;
+      transition: all 0.5s ease-in-out;
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        a {
+          color: $font-primary-color;
+          font-family: $font-family-md;
+          text-decoration: none;
+          font-size: 1.1rem;
+          margin: 10px 15px;
+          text-transform: uppercase;
+          display: inline-block;
+          &:hover {
+            color: $font-quaternary-color;
+          }
+        }
+      }
+    }
+
+    .open-menu {
+      right: 0px;
+    }
+    .fifty {
+      display: none;
+    }
+    .find {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      order: 3;
+    }
+    .idiomatop {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-around;
+      order: 2;
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+          margin: 0 3px;
+          height: auto;
+          width: 30px;
+          text-align: center;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  .find-container {
+    width: 100%;
+    position: absolute;
+    background-color: $bg-primary-color;
+    padding: 15px 0px;
+    text-align: center;
+    z-index: 1950;
+    top: 0px;
+    transition: all 0.3s ease-in-out;
+    .find-box {
+      input {
+        width: 60%;
+        padding: 10px;
+        border: none;
+        border-radius: 25px 0px 0px 25px;
+        font-size: 1rem;
+        padding-left: 20px;
+        border: 1px solid $color-light-grey;
+      }
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 0px 25px 25px 0px;
+        background-color: $bg-secondary-color;
+        color: $font-secondary-color;
+        font-size: 1rem;
+        cursor: pointer;
+        &:hover {
+          background-color: darken($bg-secondary-color, 10%);
+        }
+      }
+    }
+  }
+  .find-container-open {
+    top: 90px;
+  }
+}
+/* PRODUCTOS */
+.section-productos {
+  background-color: $bg-quaternary-color;
+  padding: 30px 25px 60px;
+  h2 {
+    font-family: $font-family-lg;
+    font-size: 1.7rem;
+    margin-bottom: 30px;
+    color: $font-primary-color;
+    margin-top: 60px;
+    padding-bottom: 15px;
+    background-image: url("../../assets/images/linea.png");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+  }
+  .card {
+    border: 0px;
+    h3{
+        font-family: $font-family-md;
+        font-size: 1.2rem;
+        margin-top: 20px;
+        color: $font-primary-color;
+        margin-bottom: 5px;
+        padding: 0px 25px;
+    }
+  }
+}
+
+/* UN PRODUCTO */
+.section-unproducto {
+  padding: 60px 25px 60px;
+  background-image: url("../../assets/images/degradado-gris-inv.png");
+  background-size: contain;
+  background-position: center top;
+  background-repeat: repeat-x;
+  .imagenes {
+    @include grid(grid, 1fr);
+    gap: 10px;
+    position: relative;
+    .imagen-pincipal {
+      height: 450px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+    .imagen-thumbs {
+      @include grid(grid, 1fr 1fr 1fr 1fr);
+      gap: 10px;
+      .imagen-thumb {
+        height: 80px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: $bg-quaternary-color;
+        background-size: 80%;
+        cursor: pointer;
+      }
+    }
+  }
+  .texto {
+    padding: 30px 0px;
+    color: $font-primary-color;
+    h1 {
+      font-family: $font-family-b;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+  }
+  .btn-accion {
+    padding: 10px 20px;
+    border: 1px solid $bg-secondary-color;
+    border-radius: 25px 25px 25px 25px;
+    background-color: $bg-primary-color;
+    color: $font-primary-color;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 15px;
+    display: inline;
+    &:hover {
+      background-color: $bg-secondary-color;
+      color: $font-secondary-color;
+    }
+  }
+  .back{
+    color: $font-primary-color;
+  }
+}

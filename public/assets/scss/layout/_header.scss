@@ -1,0 +1,167 @@
+@import "../abstracts/mixins";
+.header-home {
+    height: 100svh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    justify-items: center;
+    display: grid;
+    overflow: hidden;
+    align-content: space-between;
+    .top-navigation {
+        background-color: $bg-primary-color;
+        padding: 20px 20px;
+        width: 100%;
+        @include grid(grid, 35% 35% 15% 15%);
+        position: fixed;
+        z-index: 2050;
+        .logo {
+            padding: 5px 0px;
+            order: 1;
+        }
+        .menu {
+            background-color: $bg-primary-color;
+            position: fixed;
+            top: 0;
+            right: -300px;
+            height: 100%;
+            padding: 30px 50px;
+            display: flex;
+            align-items: center;
+            z-index: 2100;
+            transition: all 0.5s ease-in-out;
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                a {
+                    color: $font-primary-color;
+                    font-family: $font-family-md;
+                    text-decoration: none;
+                    font-size: 1.1rem;
+                    margin: 10px 15px;
+                    text-transform: uppercase;
+                    display: inline-block;
+                    &:hover {
+                        color: $font-quaternary-color;
+                    }
+                }
+            }
+        }
+
+        .open-menu {
+            right: 0px;
+        }
+        .fifty {
+            display: none;
+        }
+        .find {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            order: 3;
+            cursor: pointer;
+        }
+        .idiomatop {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-around;
+            order: 2;
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                li {
+                    margin: 0 3px;
+                    height: auto;
+                    width: 30px;
+                    text-align: center;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+    .find-container {
+        width: 100%;
+        position: fixed;
+        background-color: $bg-primary-color;
+        padding: 15px 0px;
+        text-align: center;
+        z-index: 1950;
+        top: 0px;
+        transition: all 0.3s ease-in-out;
+        .find-box {
+            input {
+                width: 60%;
+                padding: 10px;
+                border: none;
+                border-radius: 25px 0px 0px 25px;
+                font-size: 1rem;
+                padding-left: 20px;
+                border: 1px solid $color-light-grey;
+            }
+            button {
+                padding: 10px 20px;
+                border: none;
+                border-radius: 0px 25px 25px 0px;
+                background-color: $bg-secondary-color;
+                color: $font-secondary-color;
+                font-size: 1rem;
+                cursor: pointer;
+                &:hover {
+                    background-color: darken($bg-secondary-color, 10%);
+                }
+            }
+        }
+    }
+    .find-container-open {
+        top: 90px;
+    }
+
+    .contenedor-slide {
+        position: relative;
+        width: 100%;
+        height: 100svh;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        background-size: cover;
+        font-family: $font-family;
+        .contenido {
+            width: 100%;
+            padding: 0px 25px;
+            .isotipo {
+                width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+                text-align: center;
+                img {
+                    width: 50px;
+                    height: auto;
+                }
+            }
+            h1 {
+                color: $font-secondary-color;
+                font-size: 1.8rem;
+                text-align: center;
+                margin-bottom: 15px;
+                font-family: $font-family-b;
+            }
+            p {
+                color: $font-secondary-color;
+                font-size: 1rem;
+                text-align: center;
+                margin-bottom: 10px;
+                a {
+                    color: $font-secondary-color;
+                    &:hover {
+                        color: lighten($font-secondary-color, 10%);
+                    }
+                }
+            }
+        }
+    }
+}

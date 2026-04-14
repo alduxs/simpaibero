@@ -1,0 +1,11 @@
+.borrar-number-img{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.logo-lg2{
+    width: 120px;
+}
+.logo-lg2 img{
+    width: 120px;
+}

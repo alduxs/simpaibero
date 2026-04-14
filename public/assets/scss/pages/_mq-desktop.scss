@@ -1,0 +1,290 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+/* Media query para desktop */
+@media (min-width: 960px) {
+    .header-home {
+        .top-navigation {
+            padding: 20px 20px;
+            width: 960px;
+            @include grid(grid, 15% 60% 10% 10% 5%);
+            position: relative;
+            .logo {
+                order: 1;
+            }
+            .menu {
+                position: relative;
+                top: 0;
+                right: 0px;
+                height: auto;
+                padding: 30px 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 2100;
+                transition: all 0.5s ease-in-out;
+                order: 2;
+                ul {
+                    li {
+                        display: inline-block;
+                    }
+                    a {
+                        font-size: 0.95rem;
+                        margin: 0 14px;
+                    }
+                }
+            }
+            .fifty {
+                /* MOD */
+                display: flex;
+                order: 3;
+                align-items: center;
+                justify-content: center;
+                img {
+                    width: 60px;
+                    height: auto;
+                }
+            }
+            .find {
+                order: 5;
+            }
+            .idiomatop {
+                order: 4;
+            }
+        }
+
+        .find-container {
+            position: absolute;
+        }
+
+
+        .find-container-open {
+            top: 140px;
+        }
+
+        .contenedor-slide {
+            display: flex;
+            align-items: center;
+            background-size: cover;
+            .contenido {
+                width: 58%;
+                padding: 0px 0px 0px 100px;
+                .isotipo {
+                    text-align: start;
+                }
+                h1 {
+                    font-size: 3.5rem;
+                    text-align: start;
+                }
+                p {
+                    text-align: start;
+                    font-size: 1.7rem;
+                }
+            }
+        }
+    }
+
+    .model1 {
+        .contenido {
+            .contenido-texto {
+                h2 {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+    .model1b {
+        .card {
+            .card-body {
+                .card-title {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+        h2 {
+            font-size: 1.7rem;
+        }
+        h3 {
+            font-size: 1.3rem;
+        }
+    }
+    .model2 {
+        .contenido-texto {
+            h2 {
+                font-size: 2rem;
+            }
+            p {
+                font-family: $font-family;
+                font-size: 16px;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    .model22 {
+        background-size: cover;
+        .contenido-texto {
+            h2 {
+                font-size: 1.7rem;
+            }
+        }
+    }
+    .model3 {
+        .contenedor-a {
+            background-position: center bottom;
+            padding: 140px 30px 140px;
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .model4 {
+        background-size: cover;
+        .contenido-texto {
+            h2 {
+                font-size: 1.7rem;
+            }
+        }
+    }
+
+    .btn11 {
+        display: none;
+    }
+
+    .logo-gris {
+        background-position: 97% 92%;
+    }
+
+    footer {
+        .seguinos {
+            padding-left: 30px;
+            border-left: 1px solid #fff;
+        }
+    }
+
+    /* INTERIORES */
+    .header-home-int {
+        .top-navigation {
+            padding: 20px 20px;
+            width: 960px;
+            @include grid(grid, 15% 60% 10% 10% 5%);
+            .logo {
+                order: 1;
+            }
+            .menu {
+                position: relative;
+                top: 0;
+                right: 0px;
+                height: auto;
+                padding: 30px 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 2100;
+                transition: all 0.5s ease-in-out;
+                order: 2;
+                ul {
+                    li {
+                        display: inline-block;
+                    }
+                    a {
+                        font-size: 0.95rem;
+                        margin: 0 14px;
+                    }
+                }
+            }
+            .fifty {
+                /* MOD */
+                display: flex;
+                order: 3;
+                align-items: center;
+                justify-content: center;
+                img {
+                    width: 60px;
+                    height: auto;
+                }
+            }
+            .find {
+                order: 5;
+            }
+            .idiomatop {
+                order: 4;
+            }
+        }
+
+        .find-container-open {
+            top: 140px;
+        }
+
+        .contenedor-slide {
+            display: flex;
+            align-items: center;
+            background-size: cover;
+            .contenido {
+                width: 58%;
+                padding: 0px 0px 0px 100px;
+                .isotipo {
+                    text-align: start;
+                }
+                h1 {
+                    font-size: 3.5rem;
+                    text-align: start;
+                }
+                p {
+                    text-align: start;
+                    font-size: 1.7rem;
+                }
+            }
+        }
+    }
+
+    /* UN PRODUCTO */
+    .section-unproducto {
+        .imagenes {
+            .imagen-pincipal {
+                height: 600px;
+                background-size: contain;
+            }
+            .imagen-thumbs {
+                .imagen-thumb {
+                    height: 100px;
+
+                    background-size: 50%;
+                }
+            }
+        }
+        .texto {
+            padding: 0px 0px;
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+@media (min-width: 1200px) {
+    .header-home {
+        .top-navigation {
+            width: 1140px;
+        }
+    }
+    .header-home-int {
+        .top-navigation {
+            width: 1140px;
+        }
+    }
+}
+
+@media (min-width: 1400px) {
+    .header-home {
+        .top-navigation {
+            width: 1320px;
+        }
+    }
+    .header-home-int {
+        .top-navigation {
+            width: 1320px;
+        }
+    }
+}

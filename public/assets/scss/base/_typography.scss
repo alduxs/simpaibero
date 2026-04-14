@@ -1,0 +1,62 @@
+//@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* Ligth Weight */
+@font-face {
+  font-family: 'Airbnb Light';
+  src: url('../../assets/css/fonts/airbnb-ligth.woff') format('woff'),
+       url('../../assets/css/fonts/airbnb-ligth.woff2') format('woff2'),
+       url('../../assets/css/fonts/airbnb-ligth.otf') format('otf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Regular Weight */
+@font-face {
+  font-family: 'Airbnb Regular';
+  src: url('../../assets/css/fonts/airbnb-book.woff') format('woff'),
+       url('../../assets/css/fonts/airbnb-book.woff2') format('woff2'),
+       url('../../assets/css/fonts/airbnb-book.otf') format('otf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Medium Weight */
+@font-face {
+  font-family: 'Airbnb Medium';
+  src: url('../../assets/css/fonts/airbnb-medium.woff') format('woff'),
+       url('../../assets/css/fonts/airbnb-medium.woff2') format('woff2'),
+       url('../../assets/css/fonts/airbnb-medium.otf') format('otf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Bold Weight */
+@font-face {
+  font-family: 'Airbnb Bold';
+  src: url('../../assets/css/fonts/airbnb-bold.woff') format('woff'),
+       url('../../assets/css/fonts/airbnb-bold.woff2') format('woff2'),
+       url('../../assets/css/fonts/airbnb-bold.otf') format('otf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Extra Bold Weight */
+@font-face {
+  font-family: 'Airbnb Extra Bold';
+  src: url('../../assets/css/fonts/airbnb-extrabold.woff') format('woff'),
+       url('../../assets/css/fonts/airbnb-extrabold.woff2') format('woff2'),
+       url('../../assets/css/fonts/airbnb-extrabold.otf') format('otf');
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Extra Black Weight */
+@font-face {
+  font-family: 'Airbnb Black';
+  src: url('../../assets/css/fonts/airbnb-black.woff') format('woff'),
+       url('../../assets/css/fonts/airbnb-black.woff2') format('woff2'),
+       url('../../assets/css/fonts/airbnb-black.otf') format('otf');
+  font-weight: 900;
+  font-style: normal;
+}

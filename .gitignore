@@ -23,10 +23,21 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
-/public/assets
+/public/assets/data
+/public/assets/data/*
+/public/assets/files
+/public/assets/files/*
+/public/assets/plugins
+/public/assets/plugins/*
+/public/assets/slides
+/public/assets/fontawsome
+/public/assets/fontawsome/*
 /public/assets/productos
 /public/assets/productos/*
 /public/assets/productos/big
 /public/assets/productos/small
+/public/assets/js/plugins
+/public/assets/js/pages
+/public/assets/js/maps
 
 

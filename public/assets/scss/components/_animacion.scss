@@ -1,0 +1,19 @@
+.trasicion{
+    transition: all 1s ease-in-out;
+}
+.opacity-0{
+    opacity: 0;
+}
+.opacity-1{
+    opacity: 1;
+}
+.move-opacity-0{
+    opacity: 0;
+    position: relative;
+    left: -150px;
+}
+.move-opacity-1{
+    opacity: 1;
+    position: relative;
+    left: 0px;
+}

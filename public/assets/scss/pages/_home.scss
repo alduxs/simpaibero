@@ -1,0 +1,210 @@
+.model1 {
+  background-color: $bg-primary-color;
+  padding: 60px 25px;
+  .contenido {
+    background-color: $bg-primary-color;
+    display: flex;
+    flex-direction: column;
+    .contenido-imagen {
+      height: 300px;
+      background-position: center bottom;
+      background-size: cover;
+    }
+    .contenido-texto {
+      padding: 60px 60px 80px 60px;
+      width: auto;
+      h2 {
+        font-family: $font-family-md;
+        color: $font-primary-color;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        line-height: normal;
+      }
+      p {
+        font-family: $font-family;
+        color: $font-primary-color;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  h2 {
+    font-family: $font-family;
+    color: $font-primary-color;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  h3 {
+    font-family: $font-family;
+    color: $font-primary-color;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+}
+
+.model1b {
+  background-color: $bg-primary-color;
+  padding: 60px 25px;
+  .card {
+    .card-body {
+      padding: 30px;
+      .card-title {
+        font-family: $font-family-md;
+        font-size: 1.1rem;
+        line-height: normal;
+      }
+    }
+  }
+
+  h2 {
+    font-family: $font-family-md;
+    color: $font-primary-color;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  h3 {
+    font-family: $font-family-md;
+    color: $font-primary-color;
+    font-size: 1.2rem ;
+    margin-bottom: 15px;
+  }
+}
+
+.model2 {
+  background-color: $bg-primary-color;
+  padding: 60px 25px;
+  .contenido-texto {
+    padding: 40px 40px 40px 40px;
+    color: $font-secondary-color;
+    h2 {
+      font-family: $font-family-md;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+    p {
+      font-family: $font-family;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+}
+
+.model22 {
+  background-color: $bg-primary-color;
+  background-size: auto 101%;
+  padding: 60px 25px;
+  .contenido-texto {
+    padding: 40px 0px 40px 0px;
+    color: $font-secondary-color;
+    h2 {
+      font-family: $font-family-md;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      margin-bottom: 30px;
+      line-height: normal;
+    }
+    p {
+      font-family: $font-family;
+      line-height: 1.5;
+    }
+  }
+}
+
+.model3 {
+  background-color: $bg-primary-color;
+
+  .contenedor-a {
+    padding: 140px 30px 140px;
+    color: $font-secondary-color;
+    background-position: center bottom;
+    h2 {
+      font-size:1.2rem;
+      font-family: $font-family-md;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+  }
+  .contenedor-b {
+    padding: 60px 30px;
+  }
+}
+
+.model4 {
+  background-color: $bg-primary-color;
+  background-size: auto 101%;
+  padding: 60px 25px;
+  .contenido-texto {
+    padding: 40px 0px 40px 0px;
+    color: $font-secondary-color;
+    h2 {
+      font-family: $font-family-md;
+      font-size:1.2rem;
+      margin-bottom: 15px;
+      margin-bottom: 30px;
+    }
+    p {
+      font-family: $font-family;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+  form {
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ffffff;
+      border-radius: 0px;
+      font-size: 16px;
+      background-color: transparent;
+      color: $font-secondary-color;
+    }
+    input:focus,
+    textarea:focus {
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-color: $bg-secondary-color;
+      box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+.card-cont {
+  padding: 0px 0px 30px 0px;
+  overflow: hidden;
+  position: relative;
+  .shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: #ffffff;
+    background: linear-gradient(0deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.83) 62%, rgba(255, 255, 255, 0) 100%);
+  }
+  .mascontent{
+    padding: 10px 30px;
+    font-size: 3rem;
+    font-family: $font-family-md;
+    color: $color-orange;
+    font-weight: 700;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: rgba(255, 255, 255, 1);
+    }
+  }
+}

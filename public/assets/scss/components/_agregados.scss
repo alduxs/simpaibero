@@ -1,0 +1,102 @@
+.velo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.link-buton,
+.link-buton-block {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px 25px 25px 25px;
+  background-color: $bg-secondary-color;
+  color: $font-secondary-color;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 25px;
+  display: inline-block;
+  &:hover {
+    background-color: darken($bg-secondary-color, 10%);
+  }
+}
+.link-buton-block {
+  display: block;
+  text-align: center;
+}
+.logo-gris {
+  background-image: url("../images/logo-gris.png");
+  background-repeat: no-repeat;
+  background-position: 90% 95%;
+  background-size: 35px;
+}
+.logo-color {
+  background-image: url("../images/isotipo.png");
+  background-repeat: no-repeat;
+  background-position: 100% 0%;
+  background-size: 35px;
+}
+.shadow-box {
+  box-shadow: -5px 3px 22px -2px rgba(0, 0, 0, 0.76);
+  -webkit-box-shadow: -5px 3px 22px -2px rgba(0, 0, 0, 0.76);
+  -moz-box-shadow: -5px 3px 22px -2px rgba(0, 0, 0, 0.76);
+}
+.separacion-2-columnas {
+  margin-bottom: 30px;
+}
+.border-color-secondary {
+  border: 4px solid $bg-secondary-color;
+}
+.rounded30 {
+  border-radius: 30px;
+}
+.ultilde {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    margin-bottom: 15px;
+    img {
+      margin-right: 10px;
+    }
+  }
+}
+#map {
+  width: 100%;
+  height: 500px;
+  margin-top: 30px;
+}
+#map2 {
+  width: 100%;
+  height: 300px;
+  margin-top: 30px;
+}
+.color-orange {
+  color: $color-orange;
+}
+.whatsapp{
+	width: 60px;
+	height: 60px;
+	position: fixed;
+	right: 20px;
+	bottom: 30px;
+	-webkit-box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.36);
+	-moz-box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.36);
+	box-shadow: 0px 0px 55px 0px rgba(0,0,0,0.36);
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	background-color: #2fbe39;
+	background-color: #2fbe39;
+	z-index: 1800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a{
+    color: $color-white;
+  }
+}
