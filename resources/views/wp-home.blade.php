@@ -2,8 +2,7 @@
 
 <main>
     <!--Seccion 1-->
-    <section class="model1"
-        style="background-image: url('assets/images/logo-fondo-linea.png');background-repeat: no-repeat;background-position: left center;">
+    <section class="model1" style="background-image: url('assets/images/logo-fondo-linea.png');background-repeat: no-repeat;background-position: left center;">
         <div class="container">
 
             <div class="row">
@@ -34,8 +33,7 @@
     <!-- Fin Seccion 1-->
 
     <!--Seccion 2-->
-    <section class="model2 "
-        style="background-image: url('assets/images/bgrd01.jpg');background-repeat: no-repeat;background-position: left center;">
+    <section class="model2" style="background-image: url('assets/images/bgrd01.jpg');background-repeat: no-repeat;background-position: left center;">
         <div class="container logo-color">
 
             <div class="row">
@@ -63,8 +61,7 @@
     <!-- Fin Seccion 2-->
 
     <!--Seccion 3-->
-    <section class="model2 "
-        style="background-image: url('assets/images/bgrd02.jpg');background-repeat: no-repeat;background-position: left center;">
+    <section class="model2" style="background-image: url('assets/images/bgrd02.jpg');background-repeat: no-repeat;background-position: left center;">
         <div class="container logo-color">
 
             <div class="row">
@@ -91,8 +88,7 @@
     <!-- Fin Seccion 3-->
 
     <!--Seccion 4-->
-    <section class="model2 "
-        style="background-image: url('assets/images/bgrd03.jpg');background-repeat: no-repeat;background-position: left center;">
+    <section class="model2" style="background-image: url('assets/images/bgrd03.jpg');background-repeat: no-repeat;background-position: left center;">
         <div class="container logo-color">
 
             <div class="row">
