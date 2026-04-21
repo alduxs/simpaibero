@@ -304,6 +304,8 @@ class ProductController extends Controller
      */
     public function allproducts() : View
     {
+
+        $find = 0;
         $productos = Product::orderBy('productActiv','desc')
                             ->orderBy('productCategoryId','asc')
                             ->orderBy('productPosition','asc')
@@ -311,7 +313,33 @@ class ProductController extends Controller
                             ->with(['getCategoria', 'portada'])
                             ->get();
 
-        return view('wp-productos', ['productos' => $productos]);
+        return view('wp-productos', ['productos' => $productos, 'find' => $find]);
+    }
+
+    /**
+     * Search products by name or description for public site.
+     */
+    public function search(Request $request) : View
+    {
+        $term = trim($request->query('q', ''));
+        $find = 1;
+        if ($term == '') {
+            $find = 0;
+        }
+
+
+        $productos = Product::where('productActiv', 1)
+            ->where(function($q) use ($term) {
+                $q->where('productName', 'like', '%'.$term.'%')
+                  ->orWhere('productDescription', 'like', '%'.$term.'%');
+            })
+            ->orderBy('productActiv','desc')
+            ->orderBy('productCategoryId','asc')
+            ->orderBy('productPosition','asc')
+            ->with(['getCategoria', 'portada'])
+            ->get();
+
+        return view('wp-productos', ['productos' => $productos, 'find' => $find, 'searchTerm' => $term]);
     }
 
     public function getProduct(string $category, string $hash) : View

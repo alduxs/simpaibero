@@ -19,6 +19,7 @@ Route::get('/', function () {
 */
 Route::get('/', [PublicwebController::class, 'index']);
 Route::get('/productos', [ProductController::class, 'allproducts']);
+Route::get('/search', [ProductController::class, 'search']);
 Route::get('/productos/{category}/{hash}', [ProductController::class, 'getProduct']);
 
 /*Route::get('/unproducto', function () {
