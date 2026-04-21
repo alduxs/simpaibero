@@ -169,6 +169,7 @@
             padding: 20px 20px;
             width: 960px;
             @include grid(grid, 15% 60% 10% 10% 5%);
+            position: relative;
             .logo {
                 order: 1;
             }
@@ -211,6 +212,10 @@
             .idiomatop {
                 order: 4;
             }
+        }
+
+        .find-container {
+            position: absolute;
         }
 
         .find-container-open {

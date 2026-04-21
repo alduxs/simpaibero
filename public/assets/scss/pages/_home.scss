@@ -177,10 +177,10 @@
   }
 }
 .card-cont {
-  padding: 0px 0px 30px 0px;
+  padding: 0px 0px 90px 0px;
   overflow: hidden;
   position: relative;
-  .shadow {
+  .shadow2 {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -188,6 +188,7 @@
     height: 100px;
     background: #ffffff;
     background: linear-gradient(0deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.83) 62%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: 0px;
   }
   .mascontent{
     padding: 10px 30px;

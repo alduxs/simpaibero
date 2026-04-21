@@ -716,11 +716,11 @@ footer .seguinos {
 }
 
 .card-cont {
-  padding: 0px 0px 30px 0px;
+  padding: 0px 0px 90px 0px;
   overflow: hidden;
   position: relative;
 }
-.card-cont .shadow {
+.card-cont .shadow2 {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -728,6 +728,7 @@ footer .seguinos {
   height: 100px;
   background: #ffffff;
   background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.83) 62%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0px;
 }
 .card-cont .mascontent {
   padding: 10px 30px;
@@ -754,7 +755,6 @@ footer .seguinos {
   position: relative;
   justify-items: center;
   display: grid;
-  overflow: hidden;
   align-content: space-between;
 }
 .header-home-int .top-navigation {
@@ -763,7 +763,7 @@ footer .seguinos {
   width: 100%;
   display: grid;
   grid-template-columns: 35% 35% 15% 15%;
-  position: relative;
+  position: fixed;
   z-index: 2050;
 }
 .header-home-int .top-navigation .logo {
@@ -810,6 +810,7 @@ footer .seguinos {
   justify-content: center;
   align-items: center;
   order: 3;
+  cursor: pointer;
 }
 .header-home-int .top-navigation .idiomatop {
   display: inline-flex;
@@ -833,7 +834,7 @@ footer .seguinos {
 }
 .header-home-int .find-container {
   width: 100%;
-  position: absolute;
+  position: fixed;
   background-color: #fff;
   padding: 15px 0px;
   text-align: center;
@@ -1271,6 +1272,7 @@ $font-link-color-grey: #575757;
     width: 960px;
     display: grid;
     grid-template-columns: 15% 60% 10% 10% 5%;
+    position: relative;
   }
   .header-home-int .top-navigation .logo {
     order: 1;
@@ -1311,6 +1313,9 @@ $font-link-color-grey: #575757;
   }
   .header-home-int .top-navigation .idiomatop {
     order: 4;
+  }
+  .header-home-int .find-container {
+    position: absolute;
   }
   .header-home-int .find-container-open {
     top: 140px;

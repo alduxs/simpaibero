@@ -346,6 +346,7 @@ window.onload = (event) => {
     btnFind.addEventListener("click", function () {
 
         let positioFind = window.getComputedStyle(findContainer);
+        console.log(positioFind.top);
 
         if(positioFind.top=='0px'){
             findContainer.style.top = altoNavegation;

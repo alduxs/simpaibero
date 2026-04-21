@@ -64,7 +64,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
-
+/*
         // Ejemplo rápido: Detectar cuando un elemento es visible
         const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -76,7 +76,7 @@
         });
 
         observer.observe(document.querySelector('#servicios'));
-
+*/
 
     </script>
 
