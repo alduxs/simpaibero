@@ -405,11 +405,11 @@
                     data-aos-duration="1000">
                     <div class="contenido-texto">
                         <h2>CONTACTO</h2>
-                        <form action="">
+                        <form id="contactForm" action="/assets/send/envio.php" method="post">
 
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombre y Apellido</label>
-                                <input type="text" name="nombre" class="form-control" id="nombre"">
+                                <input type="text" name="name" class="form-control" id="nombre">
                                 </div>
 
                                 <div class=" mb-3">
@@ -429,16 +429,16 @@
 
                             <div class="mb-3">
                                 <label for="asunto" class="form-label">Asunto</label>
-                                <input type="text" name="asunto" class="form-control" id="asunto">
+                                <input type="text" name="casunto" class="form-control" id="asunto">
                             </div>
 
                             <div class="mb-3">
                                 <label for="consulta" class="form-label">Consulta</label>
-                                <textarea class="form-control" id="consulta" rows="3" name="consulta"></textarea>
+                                <textarea class="form-control" id="consulta" rows="3" name="comment"></textarea>
                             </div>
 
+                            <div id="contactMessage"></div>
                             <p class="text-end"><button type="submit" class="link-buton">Enviar</button></p>
-
 
                         </form>
                     </div>
@@ -457,5 +457,48 @@
     <!-- Fin Seccion 12-->
 
 </main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    const form = document.getElementById('contactForm');
+    if(!form) return;
+    const msgDiv = document.getElementById('contactMessage');
+    form.addEventListener('submit', async function(e){
+        e.preventDefault();
+        msgDiv.innerHTML = '';
+        const name = (form.querySelector('[name="name"]') || {}).value?.trim();
+        const email = (form.querySelector('[name="email"]') || {}).value?.trim();
+        const casunto = (form.querySelector('[name="casunto"]') || {}).value?.trim();
+        const comment = (form.querySelector('[name="comment"]') || {}).value?.trim();
+        const errors = [];
+        if(!name) errors.push('Ingrese Nombre y Apellido.');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(!email || !emailRegex.test(email)) errors.push('Email inválido.');
+        if(!casunto) errors.push('Ingrese Asunto.');
+        if(!comment) errors.push('Ingrese Consulta.');
+        if(errors.length){
+            msgDiv.innerHTML = '<div class="alert alert-danger">'+errors.join('<br>')+'</div>';
+            return;
+        }
+
+        const fd = new FormData(form);
+        try{
+            const resp = await fetch(form.action, {method:'POST', body: fd});
+            const data = await resp.json().catch(()=>null);
+            if(data && data.success){
+                msgDiv.innerHTML = '<div class="alert alert-success">'+(data.message||'Mensaje enviado correctamente.')+'</div>';
+                form.reset();
+            } else if (data){
+                const details = data.errors ? data.errors.join('<br>') : (data.error || data.message || 'Error al enviar.');
+                msgDiv.innerHTML = '<div class="alert alert-danger">'+details+'</div>';
+            } else {
+                msgDiv.innerHTML = '<div class="alert alert-danger">Respuesta inesperada del servidor.</div>';
+            }
+        } catch(err){
+            msgDiv.innerHTML = '<div class="alert alert-danger">Error de red. Intente más tarde.</div>';
+        }
+    });
+});
+</script>
 
 @include('layouts.wp-footer')
