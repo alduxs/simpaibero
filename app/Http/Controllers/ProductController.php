@@ -305,7 +305,7 @@ class ProductController extends Controller
     public function allproducts() : View
     {
 
-        $find = 0;
+        $find = 2;
         $productos = Product::orderBy('productActiv','desc')
                             ->orderBy('productCategoryId','asc')
                             ->orderBy('productPosition','asc')
@@ -319,6 +319,7 @@ class ProductController extends Controller
     /**
      * Search products by name or description for public site.
      */
+    /*
     public function search(Request $request) : View
     {
         $term = trim($request->query('q', ''));
@@ -341,6 +342,183 @@ class ProductController extends Controller
 
         return view('wp-productos', ['productos' => $productos, 'find' => $find, 'searchTerm' => $term]);
     }
+    public function search(Request $request) : View
+    {
+        $term = trim($request->query('q', ''));
+        $find = !empty($term) ? 1 : 0;
+        $flag = 0;
+
+        if ($find === 1) {
+            // 1. Lista de preposiciones y palabras comunes a ignorar
+            $stopWords = [
+                'a', 'ante', 'bajo', 'cabe', 'con', 'contra', 'de', 'desde', 'durante',
+                'en', 'entre', 'hacia', 'hasta', 'mediante', 'para', 'por', 'segun',
+                'sin', 'so', 'sobre', 'tras', 'versus', 'via', 'el', 'la', 'los', 'las',
+                'un', 'una', 'unos', 'unas', 'y', 'e', 'ni', 'que'
+            ];
+
+            // 2. Procesar el término de búsqueda
+            // Convertimos a minúsculas y dividimos por espacios o guiones
+            $words = collect(explode(' ', mb_strtolower($term)))
+                ->filter(function($word) use ($stopWords) {
+                    // Limpiamos la palabra de símbolos y verificamos que no sea una stopWord
+                    $cleanWord = preg_replace('/[^a-z0-9áéíóúñ]/u', '', $word);
+                    return !empty($cleanWord) && !in_array($cleanWord, $stopWords) && mb_strlen($cleanWord) > 1;
+                });
+
+
+
+            $query = Product::where('productActiv', 1);
+
+            // 3. Aplicar filtros por cada palabra válida
+            if ($words->isNotEmpty()) {
+
+                $query->where(function($q) use ($words) {
+                    foreach ($words as $word) {
+                        // Esto asegura que CADA palabra deba estar presente
+                        // ya sea en el nombre o en la descripción
+                        $q->where(function($sub) use ($word) {
+                            $sub->where('productName', 'like', '%' . $word . '%')
+                                ->orWhere('productDescription', 'like', '%' . $word . '%');
+                        });
+                    }
+                });
+            } elseif ($find === 1) {
+
+                // Si había término pero eran solo preposiciones, buscamos el término literal
+                $query->where(function($q) use ($term) {
+                    $q->where('productName', 'like', '%' . $term . '%')
+                    ->orWhere('productDescription', 'like', '%' . $term . '%');
+                });
+            }
+
+
+            $productos = $query->orderBy('productActiv', 'desc')
+                ->orderBy('productCategoryId', 'asc')
+                ->orderBy('productPosition', 'asc')
+                ->with(['getCategoria', 'portada'])
+                ->get();
+        } else {
+            $productos = array();
+            $flag = 1; // Indicamos que no se realizó búsqueda por falta de término válido
+        }
+
+
+        return view('wp-productos', [
+            'productos' => $productos,
+            'find' => $find,
+            'searchTerm' => $term,
+            'flag' => $flag
+        ]);
+    }
+
+     public function search(Request $request) : View
+    {
+        $term = trim($request->query('q', ''));
+        $find = !empty($term) ? 1 : 0;
+        $flag = 0;
+
+        // 1. Limpieza y separación de palabras
+        // Quitamos preposiciones comunes
+        $stopWords = ['de', 'con', 'para', 'en', 'y', 'la', 'el', 'los', 'las', 'un', 'una'];
+
+        // Convertimos el string en un array de palabras
+        $words = explode(' ', $term);
+
+        $query = Product::where('productActiv', 1);
+
+        if ($find) {
+            $query->where(function($q) use ($words, $stopWords) {
+                foreach ($words as $word) {
+                    $word = trim($word);
+                    // Ignoramos palabras muy cortas o preposiciones
+                    if (strlen($word) < 2 || in_array(mb_strtolower($word), $stopWords)) {
+                        continue;
+                    }
+
+                    // CADA palabra debe existir en el nombre O en la descripción
+                    $q->where(function($subQuery) use ($word) {
+                        $subQuery->where('productName', 'like', '%' . $word . '%')
+                                ->orWhere('productDescription', 'like', '%' . $word . '%');
+                    });
+                }
+            });
+
+
+        $productos = $query->orderBy('productActiv', 'desc')
+            ->orderBy('productCategoryId', 'asc')
+            ->orderBy('productPosition', 'asc')
+            ->with(['getCategoria', 'portada'])
+            ->get();
+
+
+        } else {
+            $productos = array();
+            $flag = 1; // Indicamos que no se realizó búsqueda por falta de término válido
+        }
+
+        return view('wp-productos', [
+            'productos' => $productos,
+            'find' => $find,
+            'searchTerm' => $term,
+            'flag' => $flag
+        ]);
+    }*/
+
+        public function search(Request $request) : View
+{
+    $term = trim($request->query('q', ''));
+    $find = !empty($term) ? 1 : 0;
+    $flag = 0;
+
+    // 1. Lista de preposiciones a remover
+    $stopWords = [
+        'a', 'ante', 'bajo', 'con', 'contra', 'de', 'desde', 'en', 'entre',
+        'para', 'por', 'segun', 'sin', 'sobre', 'tras', 'el', 'la', 'los',
+        'las', 'un', 'una', 'unos', 'unas', 'y', 'e', 'ni', 'que'
+    ];
+
+    // 2. Limpiamos y preparamos las palabras
+    $words = collect(explode(' ', $term))
+        ->map(fn($w) => mb_strtolower(trim($w)))
+        ->filter(fn($w) => !empty($w) && !in_array($w, $stopWords))
+        ->values();
+
+    $query = Product::where('productActiv', 1);
+
+    if ($find) {
+
+    // 3. Aplicamos la lógica OR entre términos
+    if ($words->isNotEmpty()) {
+        $query->where(function($q) use ($words) {
+            foreach ($words as $word) {
+                // Usamos orWhere para que si encuentra CUALQUIERA de las palabras, sea válido
+                $q->orWhere(function($sub) use ($word) {
+                    $sub->where('productName', 'like', '%' . $word . '%')
+                        ->orWhere('productDescription', 'like', '%' . $word . '%');
+                });
+            }
+        });
+    }
+
+    $productos = $query->orderBy('productActiv', 'desc')
+        ->orderBy('productCategoryId', 'asc')
+        ->orderBy('productPosition', 'asc')
+        ->with(['getCategoria', 'portada'])
+        ->get();
+
+        } else {
+            $productos = array();
+            $flag = 1; // Indicamos que no se realizó búsqueda por falta de término válido
+        }
+
+    return view('wp-productos', [
+        'productos' => $productos,
+        'find' => $find,
+        'searchTerm' => $term,
+        'flag' => $flag
+    ]);
+}
 
     public function getProduct(string $category, string $hash) : View
     {

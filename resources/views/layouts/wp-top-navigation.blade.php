@@ -36,7 +36,7 @@
 </div>
 <div class="find-container" id="findcontainer">
     <div class="find-box">
-        <form action="/search" method="get" style="display:flex;gap:8px;">
+        <form action="/search" method="get">
             <input type="text" name="q" id="search-input" placeholder="Buscar..." value="{{ request('q') }}">
             <button type="submit">Buscar</button>
         </form>

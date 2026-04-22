@@ -10,25 +10,51 @@
             <div class="row">
 
                 <div class="col-12 col-lg-10 offset-lg-1">
-                    @if($find == 1)
-                        <div class="row" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
-                            <div class="col-12">
-                                <h2>Resultados para{{ $searchTerm}}</h2>
-                            </div>
-                            @foreach( $productos as $producto )
-                                <div class="col-6 col-md-4">
-                                    <div class="card  separacion-2-columnas" style="border-radius: 0;">
-                                        <img src="assets/productos/big/{{ $producto->portada->imageName }}" class="card-img-top" style="border-radius: 0;">
-                                        <h3>{{ $producto->productName }}</h3>
-                                        <div class="card-body">
-                                            <p><a href="/productos/{{ Str::lower(Str::ascii($producto->getCategoria->categoryName)) }}/{{ $producto->productHash }}"
-                                                    class="link-buton-block">Ver más</a></p>
-                                        </div>
+                    @if($find == 1 || $find == 0)
+                        @if($flag == 0)
+                            @if(count($productos) == 0)
+                                <div class="row" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
+                                    <div class="col-12">
+                                        <h2>Resultados para la busqueda: {{ $searchTerm}}</h2>
+                                    </div>
+
+                                    <div class="col-12" style="min-height: 200px">
+                                        <p>No se encontraron resultados para el término de búsqueda ingresado.</p>
                                     </div>
                                 </div>
-                            @endforeach
+                            @else
+                                <div class="row" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
+                                    <div class="col-12">
+                                        <h2>Resultados para la busqueda: {{ $searchTerm}}</h2>
+                                    </div>
+                                    @foreach( $productos as $producto )
+                                    <div class="col-6 col-md-4">
+                                        <div class="card  separacion-2-columnas" style="border-radius: 0;">
+                                            <img src="assets/productos/big/{{ $producto->portada->imageName }}" class="card-img-top"
+                                                style="border-radius: 0;">
+                                            <h3>{{ $producto->productName }}</h3>
+                                            <div class="card-body">
+                                                <p><a href="/productos/{{ Str::lower(Str::ascii($producto->getCategoria->categoryName)) }}/{{ $producto->productHash }}"
+                                                        class="link-buton-block">Ver más</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            @endif
 
-                        </div>
+                        @else
+                            <div class="row" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000" >
+                                <div class="col-12">
+                                    <h2>Resultados para la busqueda: {{ $searchTerm}}</h2>
+                                </div>
+
+                                <div class="col-12" style="min-height: 200px">
+                                    <p>Es necesario ingresar un término de búsqueda.</p>
+                                </div>
+
+                            </div>
+                        @endif
                     @else
                     @php
                     $categoria = 0;
