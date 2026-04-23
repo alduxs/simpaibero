@@ -1,6 +1,5 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
-ob_start(); // capture any unexpected output (warnings/notices) for debugging
 
 $raw = filter_input_array(INPUT_POST);
 
@@ -19,14 +18,7 @@ if (empty($comment)) $errors[] = 'El campo Consulta es obligatorio.';
 if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = 'El Email no es válido.';
 
 if (!empty($errors)){
-	$out = json_encode(['success' => false, 'message' => 'Error de validación', 'errors' => $errors]);
-	$extra = trim(ob_get_clean());
-	if ($extra) {
-		// include unexpected output for debugging
-		echo json_encode(['success' => false, 'message' => 'Error de validación', 'errors' => $errors, 'debug' => $extra]);
-	} else {
-		echo $out;
-	}
+	echo json_encode(['success' => false, 'message' => 'Error de validación', 'errors' => $errors]);
 	exit;
 }
 
@@ -67,13 +59,11 @@ $mail->Body = $body; // Mensaje a enviar
 
 
 if ($mail->send()){
-	$response = ['success' => true, 'message' => 'Mensaje enviado correctamente.'];
+	echo json_encode(['success' => true, 'message' => 'Mensaje enviado correctamente.']);
 } else {
 	$errorInfo = property_exists($mail, 'ErrorInfo') ? $mail->ErrorInfo : 'Error desconocido al enviar correo.';
-	$response = ['success' => false, 'message' => 'Error al enviar el correo.', 'error' => $errorInfo];
+	echo json_encode(['success' => false, 'message' => 'Error al enviar el correo.', 'error' => $errorInfo]);
 }
 
-$extra = trim(ob_get_clean());
-if ($extra) $response['debug'] = $extra;
-echo json_encode($response);
 
+?>

@@ -405,8 +405,7 @@
                     data-aos-duration="1000">
                     <div class="contenido-texto">
                         <h2>CONTACTO</h2>
-                        <form id="contactForm" action="{{ route('contact.send') }}" method="post">
-                            @csrf
+                        <form id="contactForm" action="/assets/send/envio.php" method="post">
 
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombre y Apellido</label>
@@ -490,8 +489,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 msgDiv.innerHTML = '<div class="alert alert-success">'+(data.message||'Mensaje enviado correctamente.')+'</div>';
                 form.reset();
             } else if (data){
-                let details = data.errors ? data.errors.join('<br>') : (data.error || data.message || 'Error al enviar.');
-                if (data.debug) details += '<br><small>Debug: '+data.debug+'</small>';
+                const details = data.errors ? data.errors.join('<br>') : (data.error || data.message || 'Error al enviar.');
                 msgDiv.innerHTML = '<div class="alert alert-danger">'+details+'</div>';
             } else {
                 msgDiv.innerHTML = '<div class="alert alert-danger">Respuesta inesperada del servidor.</div>';
