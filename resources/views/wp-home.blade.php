@@ -405,21 +405,25 @@
                     data-aos-duration="1000">
                     <div class="contenido-texto">
                         <h2>CONTACTO</h2>
+
                         <form id="contactForm" action="/assets/send/envio.php" method="post">
 
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombre y Apellido</label>
                                 <input type="text" name="name" class="form-control" id="nombre">
-                                </div>
+                                <div class="invalid-feedback" id="invalid-name"></div>
+                            </div>
 
-                                <div class=" mb-3">
+                            <div class=" mb-3">
                                 <label for="localidad" class="form-label">Localidad</label>
                                 <input type="text" name="localidad" class="form-control" id="localidad">
+
                             </div>
 
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" name="email" class="form-control" id="email">
+                                <div class="invalid-feedback" id="invalid-email"></div>
                             </div>
 
                             <div class="mb-3">
@@ -430,14 +434,16 @@
                             <div class="mb-3">
                                 <label for="asunto" class="form-label">Asunto</label>
                                 <input type="text" name="casunto" class="form-control" id="asunto">
+                                <div class="invalid-feedback" id="invalid-subject"></div>
                             </div>
 
                             <div class="mb-3">
                                 <label for="consulta" class="form-label">Consulta</label>
                                 <textarea class="form-control" id="consulta" rows="3" name="comment"></textarea>
+                                <div class="invalid-feedback" id="invalid-message"></div>
                             </div>
 
-                            <div id="contactMessage"></div>
+                            <!---->
                             <p class="text-end"><button type="submit" class="link-buton">Enviar</button></p>
 
                         </form>
@@ -458,35 +464,95 @@
 
 </main>
 
+<!-- Modal -->
+<div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+
+        <div id="contactMessage"></div>
+      </div>
+      <div class="modal-footer" style="justify-content: center;">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closebutton" style="display: none">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', function(){
+
+    const emailModal = document.getElementById("emailModal");
+    const sendModal = new bootstrap.Modal(emailModal, {
+        keyboard: false,
+        backdrop: 'static'
+    });
+
+    let campoName = document.getElementById('nombre');
+    let campoEmail = document.getElementById('email');
+    let campoSubject = document.getElementById('asunto');
+    let campoMessage = document.getElementById('consulta');
+    const msgDiv = document.getElementById('contactMessage');
+    let closebutton = document.getElementById('closebutton');
+
     const form = document.getElementById('contactForm');
     if(!form) return;
-    const msgDiv = document.getElementById('contactMessage');
+
     form.addEventListener('submit', async function(e){
         e.preventDefault();
-        msgDiv.innerHTML = '';
-        const name = (form.querySelector('[name="name"]') || {}).value?.trim();
-        const email = (form.querySelector('[name="email"]') || {}).value?.trim();
-        const casunto = (form.querySelector('[name="casunto"]') || {}).value?.trim();
-        const comment = (form.querySelector('[name="comment"]') || {}).value?.trim();
+        //msgDiv.innerHTML = '';
+        const name = campoName.value?.trim();
+        const email = campoEmail.value?.trim();
+        const casunto = campoSubject.value?.trim();
+        const comment = campoMessage.value?.trim();
         const errors = [];
-        if(!name) errors.push('Ingrese Nombre y Apellido.');
+
+        if(!name) errors.push({ field: 'name', message: 'Ingrese Nombre y Apellido.' });
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if(!email || !emailRegex.test(email)) errors.push('Email inválido.');
-        if(!casunto) errors.push('Ingrese Asunto.');
-        if(!comment) errors.push('Ingrese Consulta.');
-        if(errors.length){
-            msgDiv.innerHTML = '<div class="alert alert-danger">'+errors.join('<br>')+'</div>';
+        if(!email || !emailRegex.test(email)) errors.push({ field: 'email', message: 'Email inválido.' });
+        if(!casunto) errors.push({ field: 'subject', message: 'Ingrese un Asunto.' });
+        if(!comment) errors.push({ field: 'message', message: 'Ingrese una Consulta.' });
+
+
+
+        if (errors.length) {
+
+            const nameErr = errors.find(e => e.field === 'name')?.message;
+            const emailErr = errors.find(e => e.field === 'email')?.message;
+            const subjectErr = errors.find(e => e.field === 'subject')?.message;
+            const messageErr = errors.find(e => e.field === 'message')?.message;
+
+
+
+            if (nameErr) {
+                document.getElementById('invalid-name').classList.remove('invalid-feedback');
+                document.getElementById('invalid-name').innerHTML = '<div class="alert alert-danger" style="padding: 8px;font-size: 12px;">' + nameErr + '</div>';
+            }
+            if (emailErr) {
+                document.getElementById('invalid-email').classList.remove('invalid-feedback');
+                document.getElementById('invalid-email').innerHTML = '<div class="alert alert-danger" style="padding: 8px;font-size: 12px;">' + emailErr + '</div>';
+            }
+            if (subjectErr) {
+                document.getElementById('invalid-subject').classList.remove('invalid-feedback');
+                document.getElementById('invalid-subject').innerHTML = '<div class="alert alert-danger" style="padding: 8px;font-size: 12px;">' + subjectErr + '</div>';
+            }
+            if (messageErr) {
+                document.getElementById('invalid-message').classList.remove('invalid-feedback');
+                document.getElementById('invalid-message').innerHTML = '<div class="alert alert-danger" style="padding: 8px;font-size: 12px;">' + messageErr + '</div>';
+            }
             return;
         }
 
+        msgDiv.innerHTML = '<p>Estamos enviando su consulta. Espere un momento <i class="fa-solid fa-arrows-rotate fa-spin"></i></p>';
+        sendModal.show();
+
         const fd = new FormData(form);
+
         try{
             const resp = await fetch(form.action, {method:'POST', body: fd});
             const data = await resp.json().catch(()=>null);
             if(data && data.success){
-                msgDiv.innerHTML = '<div class="alert alert-success">'+(data.message||'Mensaje enviado correctamente.')+'</div>';
+                msgDiv.innerHTML = '<div class="alert alert-success">'+(data.message||'Mensaje enviado correctamente.Nos pondremos en contacto con usted a la brevedad.')+'</div>';
                 form.reset();
             } else if (data){
                 const details = data.errors ? data.errors.join('<br>') : (data.error || data.message || 'Error al enviar.');
@@ -494,10 +560,30 @@ document.addEventListener('DOMContentLoaded', function(){
             } else {
                 msgDiv.innerHTML = '<div class="alert alert-danger">Respuesta inesperada del servidor.</div>';
             }
+            closebutton.style.display = 'block';
         } catch(err){
             msgDiv.innerHTML = '<div class="alert alert-danger">Error de red. Intente más tarde.</div>';
+            closebutton.style.display = 'block';
         }
     });
+
+    campoEmail.addEventListener('input', function(){
+        document.getElementById('invalid-email').classList.add('invalid-feedback');
+        document.getElementById('invalid-email').innerHTML = '';
+    });
+    campoName.addEventListener('input', function(){
+        document.getElementById('invalid-name').classList.add('invalid-feedback');
+        document.getElementById('invalid-name').innerHTML = '';
+    });
+    campoSubject.addEventListener('input', function(){
+        document.getElementById('invalid-subject').classList.add('invalid-feedback');
+        document.getElementById('invalid-subject').innerHTML = '';
+    });
+    campoMessage.addEventListener('input', function(){
+        document.getElementById('invalid-message').classList.add('invalid-feedback');
+        document.getElementById('invalid-message').innerHTML = '';
+    });
+
 });
 </script>
 
