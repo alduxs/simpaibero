@@ -11,6 +11,7 @@ use App\Http\Controllers\TextController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RelatedProductController;
 use App\Http\Controllers\PublicwebController;
+use App\Http\Controllers\ContactController;
 
 /*
 Route::get('/', function () {
@@ -102,3 +103,6 @@ Route::delete('/related-product/{relatedProduct}/destroy', [RelatedProductContro
 
 Route::get('/user/{user}/profile/edit', [ UserController::class, 'editprofile' ] );
 Route::put('/user/{user}/profile/update', [ UserController::class, 'updateprofile' ] );
+
+// Contact form send (AJAX)
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
