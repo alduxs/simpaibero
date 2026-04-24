@@ -11,25 +11,23 @@ use App\Http\Controllers\TextController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RelatedProductController;
 use App\Http\Controllers\PublicwebController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 
-/*
-Route::get('/', function () {
-    return view('wp-home');
-});
-*/
 Route::get('/', [PublicwebController::class, 'index']);
 Route::get('/productos', [ProductController::class, 'allproducts']);
 Route::get('/search', [ProductController::class, 'search']);
 Route::get('/productos/{category}/{hash}', [ProductController::class, 'getProduct']);
 
-/*Route::get('/unproducto', function () {
-    return view('wp-unproducto');
-});*/
-
 Auth::routes();
 
-
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Explicit password reset routes (ensure views/controllers are used)
+Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
 
 //CATEGORY ROUTES
 Route::get('/categories', [CategoryController::class, 'index']);
@@ -78,7 +76,6 @@ Route::put('/user/{user}/update', [ UserController::class, 'update' ] );
 Route::get('/user/{user}/delete', [ UserController::class, 'confirm' ] );
 Route::delete('/user/{user}/destroy', [ UserController::class,'destroy' ] );
 
-
 //TEXTS ROUTES
 Route::get('/texts', [TextController::class, 'index']);
 Route::get('/text/{text}/edit', [ TextController::class, 'edit' ] );
@@ -99,6 +96,5 @@ Route::post('/related-product/store', [RelatedProductController::class, 'store']
 Route::delete('/related-product/{relatedProduct}/destroy', [RelatedProductController::class, 'destroy']);
 
 //PROFILE
-
 Route::get('/user/{user}/profile/edit', [ UserController::class, 'editprofile' ] );
 Route::put('/user/{user}/profile/update', [ UserController::class, 'updateprofile' ] );
