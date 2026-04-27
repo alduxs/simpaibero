@@ -1,9 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 return [
-    'password' => 'Las contraseñas deben tener al menos seis caracteres y coincidir con la confirmación.',
-    'reset' => '¡Tu contraseña ha sido restablecida!',
-    'sent' => 'Hemos enviado por correo el enlace para restablecer tu contraseña.',
-    'token' => 'Este token de restablecimiento de contraseña no es válido.',
-    'user' => 'No podemos encontrar un usuario con esa dirección de correo electrónico.',
+    'password'  => 'Las contraseñas deben tener al menos seis caracteres y coincidir con la confirmación.',
+    'reset'     => 'Su contraseña ha sido restablecida.',
+    'sent'      => 'Le hemos enviado por correo electrónico el enlace para restablecer su contraseña.',
+    'throttled' => 'Por favor espere antes de intentar de nuevo.',
+    'token'     => 'El token de restablecimiento de contraseña es inválido.',
+    'user'      => 'No encontramos ningún usuario con ese correo electrónico.',
 ];
