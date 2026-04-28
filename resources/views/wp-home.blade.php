@@ -43,7 +43,7 @@
                     <div class="contenido-texto" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
                         <h2>{{ $texts[1]->textName; }}</h2>
                         <p>{!! $texts[1]->textContent; !!}</p>
-                        <p><a href="/productos#amasadoras" class="link-buton">Nuestros Equipos</a></p>
+                        <p><a href="/productos#load-amasadoras" class="link-buton">Nuestros Equipos</a></p>
                     </div>
 
 
@@ -71,7 +71,7 @@
                     <div class="contenido-texto" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
                         <h2>{{ $texts[2]->textName; }}</h2>
                         <p>{!! $texts[2]->textContent; !!}</p>
-                        <p><a href="/productos#maquinas" class="link-buton">Nuestros Equipos</a></p>
+                        <p><a href="/productos#load-maquinas" class="link-buton">Nuestros Equipos</a></p>
                     </div>
 
                 </div>
@@ -98,7 +98,7 @@
                     <div class="contenido-texto" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
                         <h2>{{ $texts[3]->textName; }}</h2>
                         <p>{!! $texts[3]->textContent; !!}</p>
-                        <p><a href="/productos#batidoras" class="link-buton">Nuestros Equipos</a></p>
+                        <p><a href="/productos#load-batidoras" class="link-buton">Nuestros Equipos</a></p>
                     </div>
                 </div>
 
@@ -125,7 +125,7 @@
                     <div class="contenido-texto" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
                         <h2>{{ $texts[4]->textName; }}</h2>
                         <p>{!! $texts[4]->textContent; !!}</p>
-                        <p><a href="/productos#hornos" class="link-buton">Nuestros Equipos</a></p>
+                        <p><a href="/productos#load-hornos" class="link-buton">Nuestros Equipos</a></p>
                     </div>
 
                 </div>
@@ -306,7 +306,7 @@
                                 <img src="assets/images/maquina-muestra1.png" class="card-img-top"
                                     style="border-radius: 0;">
                                 <div class="card-body">
-                                    <p><a href="/productos#amasadoras" class="link-buton-block">Ver más</a></p>
+                                    <p><a href="/productos#load-amasadoras" class="link-buton-block">Ver más</a></p>
                                 </div>
                             </div>
 
@@ -319,7 +319,7 @@
                                 <img src="assets/images/maquina-muestra2.png" class="card-img-top"
                                     style="border-radius: 0;">
                                 <div class="card-body">
-                                    <p><a href="/productos#batidoras" class="link-buton-block">Ver más</a></p>
+                                    <p><a href="/productos#load-batidoras" class="link-buton-block">Ver más</a></p>
                                 </div>
                             </div>
 
@@ -332,7 +332,7 @@
                                 <img src="assets/images/maquina-muestra3.png" class="card-img-top"
                                     style="border-radius: 0;">
                                 <div class="card-body">
-                                    <p><a href="/productos#maquinas" class="link-buton-block">Ver más</a></p>
+                                    <p><a href="/productos#load-maquinas" class="link-buton-block">Ver más</a></p>
                                 </div>
                             </div>
 
@@ -345,7 +345,7 @@
                                 <img src="assets/images/maquina-muestra4.png" class="card-img-top"
                                     style="border-radius: 0;">
                                 <div class="card-body">
-                                    <p><a href="/productos#hornos" class="link-buton-block">Ver más</a></p>
+                                    <p><a href="/productos#load-hornos" class="link-buton-block">Ver más</a></p>
                                 </div>
                             </div>
 

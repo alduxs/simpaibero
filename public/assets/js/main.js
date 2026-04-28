@@ -355,4 +355,23 @@ window.onload = (event) => {
         }
 
     });
+
+    // 1. Verificamos si hay un hash (ancla) en la URL
+    if (window.location.hash) {
+        const targetId = window.location.hash.substring(1); // Quitamos el '#'
+        const taregetFinalId =  targetId.split("-")[1];
+        const targetElement = document.getElementById(taregetFinalId);
+        if (targetElement) {
+            // 2. Opcional: Un pequeño delay de 100ms por si hay renderizados finales
+            setTimeout(() => {
+                // 3. Desplazamiento suave (o instantáneo) al elemento
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 100);
+        }
+    }
 };
+
+
