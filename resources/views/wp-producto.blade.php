@@ -83,6 +83,7 @@
                         <div class="col-6 col-md-4">
                             <div class="card  separacion-2-columnas" style="border-radius: 0;">
                                 <img src="{{ asset('assets/productos/big/' . $relacionado->portada->imageName) }}" class="card-img-top" style="border-radius: 0;">
+                                <h3>{{ $relacionado->productName }}</h3>
                                 <div class="card-body">
                                     <p><a href="/productos/{{ Str::lower(Str::ascii($relacionado->getCategoria->categoryName)) }}/{{ $relacionado->productHash }}" class="link-buton-block">Ver más</a></p>
                                 </div>
