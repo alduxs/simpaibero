@@ -24,11 +24,12 @@ $font-link-color-grey: #575757;
   box-sizing: border-box;
 }
 
-body {
+body, html {
   font-family: "Airbnb Regular", serif;
   font-optical-sizing: auto;
   background-color: #fff;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* Tipografía */
@@ -870,7 +871,7 @@ footer .seguinos {
 /* PRODUCTOS */
 .section-productos {
   background-color: #e8e8e8;
-  padding: 30px 25px 60px;
+  padding: 180px 25px 60px;
 }
 .section-productos h2 {
   font-family: "Airbnb Light", serif;
@@ -895,9 +896,36 @@ footer .seguinos {
   padding: 0px 25px;
 }
 
+.section-productos-rel {
+  background-color: #e8e8e8;
+  padding: 60px 25px 60px;
+}
+.section-productos-rel h2 {
+  font-family: "Airbnb Light", serif;
+  font-size: 1.7rem;
+  margin-bottom: 30px;
+  color: #606060;
+  margin-top: 60px;
+  padding-bottom: 15px;
+  background-image: url("../../assets/images/linea.png");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+.section-productos-rel .card {
+  border: 0px;
+}
+.section-productos-rel .card h3 {
+  font-family: "Airbnb Medium", serif;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  color: #606060;
+  margin-bottom: 5px;
+  padding: 0px 25px;
+}
+
 /* UN PRODUCTO */
 .section-unproducto {
-  padding: 60px 25px 60px;
+  padding: 200px 25px 60px;
   background-image: url("../../assets/images/degradado-gris-inv.png");
   background-size: contain;
   background-position: center top;
@@ -1120,6 +1148,9 @@ $font-link-color-grey: #575757;
     font-size: 1.3rem;
   }
   /* UN PRODUCTO */
+  .section-unproducto {
+    padding: 180px 25px 60px;
+  }
   .section-unproducto .texto h1 {
     font-size: 1.6rem;
   }
@@ -1355,6 +1386,14 @@ $font-link-color-grey: #575757;
   .section-unproducto .texto h1 {
     font-size: 1.8rem;
     margin-bottom: 30px;
+  }
+  /* PRODUCTOS */
+  .section-productos {
+    padding: 60px 25px 60px;
+  }
+  /* UN PRODUCTO */
+  .section-unproducto {
+    padding: 60px 25px 60px;
   }
 }
 @media (min-width: 1200px) {

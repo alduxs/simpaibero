@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/carousel/carousel.css" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/styles.css?v=9" />
     <!-- FONTAWESOME -->
     <link rel="stylesheet" href="/assets/css/fontawsome/css/all.css" />
     <!-- Animacion -->

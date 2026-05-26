@@ -65,7 +65,7 @@
 
     @if($producto->relacionados->isNotEmpty())
     <!--Seccion 10-->
-    <section class="section-productos">
+    <section class="section-productos-rel">
         <div class="container">
 
             <div class="row">
@@ -80,7 +80,7 @@
                         </div>
 
                        @foreach($producto->relacionados as $relacionado)
-                        <div class="col-6 col-md-4">
+                        <div class="col-12s col-md-4">
                             <div class="card  separacion-2-columnas" style="border-radius: 0;">
                                 <img src="{{ asset('assets/productos/big/' . $relacionado->portada->imageName) }}" class="card-img-top" style="border-radius: 0;">
                                 <h3>{{ $relacionado->productName }}</h3>

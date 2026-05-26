@@ -16,7 +16,6 @@ let anchoPantalla =
     document.documentElement.clientWidth ||
     document.body.clientWidth;
 
-
 //let coordeanadasF = JSON.parse(coordeanadas);
 
 function initMap() {
@@ -372,6 +371,14 @@ window.onload = (event) => {
             }, 100);
         }
     }
+
+    /* ANCHO BODY */
+    /*const body = document.body;
+    const html = document.documentElement;
+    const anchoBody = Math.max(body.scrollWidth, body.offsetWidth, html.clientWidth, html.scrollWidth, html.offsetWidth);*/
+    //body.style.width = `${anchoPantalla}px`;
+    //body.style.setProperty('--ancho-body', `${anchoBody}px`);
+    //console.log("Ancho del body: " + anchoBody + "px");
 };
 
 

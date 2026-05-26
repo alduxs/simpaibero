@@ -33,7 +33,7 @@
     <!-- Fin Seccion 1-->
 
     <!--Seccion 2-->
-    <section class="model2" style="background-image: url('assets/images/bgrd01.jpg');background-repeat: no-repeat;background-position: left center;">
+    <section class="model2" style="background-image: url('assets/images/bgrd01.jpg');background-repeat: no-repeat;background-position: left center;">">
         <div class="container logo-color">
 
             <div class="row">
@@ -142,9 +142,7 @@
     <!-- Fin Seccion 5-->
 
     <!--Seccion 6-->
-    <section class="model1b"
-        style="background-image: url('assets/images/logo-fondo-linea.png');background-repeat: no-repeat;background-position: left center;"
-        id="servicios" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
+    <section class="model1b" style="background-image: url('assets/images/logo-fondo-linea.png');background-repeat: no-repeat;background-position: left center;" id="servicios" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
         <div class="container">
 
             <div class="row">
@@ -225,8 +223,7 @@
     <!-- Fin Seccion 7-->
 
     <!--Seccion 8-->
-    <section class="model22 "
-        style="background-image: url('assets/images/bgrd-envio.jpg');background-repeat: no-repeat;background-position: center center;background-size: cover;">
+    <section class="model22" style="background-image: url('assets/images/bgrd-envio.jpg');background-repeat: no-repeat;background-position: center center;background-size: cover; ">
         <div class="container logo-color">
 
             <div class="row">
@@ -253,8 +250,7 @@
     <!-- Fin Seccion 8-->
 
     <!--Seccion 9-->
-    <section class="model1b"
-        style="background-image: url('assets/images/fondo-logo-gris-big.png');background-repeat: no-repeat;background-position: right center;">
+    <section class="model1b" style="background-image: url('assets/images/fondo-logo-gris-big.png');background-repeat: no-repeat;background-position: right center;">
         <div class="container">
 
             <div class="row">
@@ -280,9 +276,7 @@
     <!-- Fin Seccion 9-->
 
     <!--Seccion 10-->
-    <section class="model1b"
-        style="background-image: url('assets/images/degradado-gris.png');background-repeat: no-repeat;background-position: right center;"
-        id="productos">
+    <section class="model1b" style="background-image: url('assets/images/degradado-gris.png');background-repeat: no-repeat;background-position: right center; " id="productos">
         <div class="container">
 
             <div class="row">
@@ -363,9 +357,7 @@
     <!-- Fin Seccion 10-->
 
     <!--Seccion 11-->
-    <section class="model22 "
-        style="background-image: url('assets/images/bgrd-empresa.jpg');background-repeat: no-repeat;background-position: center center;"
-        id="empresa">
+    <section class="model22" style="background-image: url('assets/images/bgrd-empresa.jpg');background-repeat: no-repeat;background-position: center center;" id="empresa">
         <div class="container">
 
             <div class="row">
@@ -394,9 +386,7 @@
     <!-- Fin Seccion 11-->
 
     <!--Seccion 12-->
-    <section class="model4 "
-        style="background-image: url('assets/images/bgrd-contacto.jpg');background-repeat: no-repeat;background-position: center center;"
-        id="contacto">
+    <section class="model4" style="background-image: url('assets/images/bgrd-contacto.jpg');background-repeat: no-repeat;background-position: center center;" id="contacto">
         <div class="container">
 
             <div class="row">

@@ -121,7 +121,34 @@
 /* PRODUCTOS */
 .section-productos {
     background-color: $bg-quaternary-color;
-    padding: 30px 25px 60px;
+    padding: 180px 25px 60px;
+    h2 {
+        font-family: $font-family-lg;
+        font-size: 1.7rem;
+        margin-bottom: 30px;
+        color: $font-primary-color;
+        margin-top: 60px;
+        padding-bottom: 15px;
+        background-image: url("../../assets/images/linea.png");
+        background-repeat: no-repeat;
+        background-position: left bottom;
+    }
+    .card {
+        border: 0px;
+        h3 {
+            font-family: $font-family-md;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            color: $font-primary-color;
+            margin-bottom: 5px;
+            padding: 0px 25px;
+        }
+    }
+}
+
+.section-productos-rel {
+    background-color: $bg-quaternary-color;
+    padding: 60px 25px 60px;
     h2 {
         font-family: $font-family-lg;
         font-size: 1.7rem;
@@ -148,7 +175,7 @@
 
 /* UN PRODUCTO */
 .section-unproducto {
-    padding: 60px 25px 60px;
+    padding: 200px 25px 60px;
     background-image: url("../../assets/images/degradado-gris-inv.png");
     background-size: contain;
     background-position: center top;

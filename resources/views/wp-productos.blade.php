@@ -28,7 +28,7 @@
                                         <h2>Resultados para la busqueda: {{ $searchTerm}}</h2>
                                     </div>
                                     @foreach( $productos as $producto )
-                                    <div class="col-6 col-md-4">
+                                    <div class="col-12 col-md-4">
                                         <div class="card  separacion-2-columnas" style="border-radius: 0;">
                                             <img src="assets/productos/big/{{ $producto->portada->imageName }}" class="card-img-top"
                                                 style="border-radius: 0;">
@@ -73,7 +73,7 @@
                         @php
                         $categoria = $producto->getCategoria->categoryId;
                         @endphp
-                        <div class="col-6 col-md-4">
+                        <div class="col-12 col-md-4">
                             <div class="card  separacion-2-columnas" style="border-radius: 0;">
                                 <img src="assets/productos/big/{{ $producto->portada->imageName }}" class="card-img-top"
                                     style="border-radius: 0;">
@@ -95,7 +95,7 @@
                         @php
                         $categoria = $producto->getCategoria->categoryId;
                         @endphp
-                        <div class="col-6 col-md-4">
+                        <div class="col-12 col-md-4">
                             <div class="card  separacion-2-columnas" style="border-radius: 0;">
                                 <img src="assets/productos/big/{{ $producto->portada->imageName }}" class="card-img-top"
                                     style="border-radius: 0;">
@@ -108,7 +108,7 @@
                         </div>
                         @endif
                         @else
-                        <div class="col-6 col-md-4">
+                        <div class="col-12 col-md-4">
                             <div class="card  separacion-2-columnas" style="border-radius: 0;">
                                 <img src="assets/productos/big/{{ $producto->portada->imageName }}" class="card-img-top"
                                     style="border-radius: 0;">

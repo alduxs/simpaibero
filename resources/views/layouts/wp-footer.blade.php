@@ -53,7 +53,7 @@
 
 
     <!-- Main -->
-    <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js?v=6') }}"></script>
 
     <!-- Main -->
     <script src="{{ asset('assets/js/animacion.js') }}"></script>
