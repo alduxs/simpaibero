@@ -43,9 +43,10 @@ $mail->Password = 'HcDZsY/8gZ';                           // SMTP password
 
 $mail->From = $email;
 $mail->FromName = $name;
-$mail->addAddress('agi.iniguez@gmail.com');     // Add a recipient
-//$mail->addAddress('leandro@simpaibero.com');     // Add a recipient
-//$mail->addAddress('ekaplan@simpaibero.com');     // Add a recipient
+
+$mail->addAddress('leandro@simpaibero.com');     // Add a recipient
+$mail->addAddress('ekaplan@simpaibero.com');     // Add a recipient
+$mail->addCC('agi.iniguez@gmail.com');     // Add a recipient
 
 
 $mail->isHTML(true);
