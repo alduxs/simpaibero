@@ -373,9 +373,9 @@
 
                 </div>
 
-                <civ class="col-12 col-md-4 col-lg-4" data-aos="fade-left" data-aos-delay="50" data-aos-duration="1000">
+                <div class="col-12 col-md-4 col-lg-4" data-aos="fade-left" data-aos-delay="50" data-aos-duration="1000">
                     <div id="map"></div>
-                </civ>
+                </div>
 
 
             </div>
