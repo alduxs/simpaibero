@@ -1,14 +1,13 @@
 <div class="top-navigation">
-    <div class="logo"><a href="/"><img src="/assets/images/wp-logo.png" alt="" class="img-fluid"></a></div>
-
+    <div class="logo"><a href="/"><img src={{ url('/assets/images/wp-logo.png') }} alt="" class="img-fluid"></a></div>
     <nav class="menu" id="menu">
         <ul>
-            <li><a href="/#home">Home</a></li>
-            <li><a href="/#empresa">Simpa</a></li>
-            <li><a href="/#servicios">Servicios</a></li>
-            <li><a href="/#productos">Productos</a></li>
-            <li><a href="/#posventa">Posventa</a></li>
-            <li><a href="/#contacto">Contactos</a></li>
+            <li><a href={{ url('/#home') }}>Home</a></li>
+            <li><a href={{ url('/#empresa') }}>Simpa</a></li>
+            <li><a href={{ url('/#servicios') }}>Servicios</a></li>
+            <li><a href={{ url('/#productos') }}>Productos</a></li>
+            <li><a href={{ url('/#posventa') }}>Posventa</a></li>
+            <li><a href={{ url('/#contacto') }}>Contactos</a></li>
         </ul>
     </nav>
 
@@ -19,7 +18,7 @@
     </div>
 
     <div class="fifty">
-        <img src="/assets/images/50anios.png" alt="">
+        <img src={{ url('/assets/images/50anios.png') }} alt="">
     </div>
 
     <div class="find" id="bt-find">
@@ -28,8 +27,8 @@
 
     <div class="idiomatop">
         <ul>
-            <li><a href="#" target="_blank"><img src="/assets/images/barg.png" alt="" class="img-fluid"></a></li>
-            <li><a href="#" target="_blank"><img src="/assets/images/bbra.png" alt="" class="img-fluid"></a></li>
+            <li><a href="#" target="_blank"><img src={{ url('/assets/images/barg.png') }} alt="" class="img-fluid"></a></li>
+            <li><a href="#" target="_blank"><img src={{ url('/assets/images/bbra.png') }} alt="" class="img-fluid"></a></li>
         </ul>
     </div>
 

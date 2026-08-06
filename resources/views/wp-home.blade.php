@@ -43,7 +43,7 @@
                     <div class="contenido-texto" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
                         <h2>{{ $texts[1]->textName; }}</h2>
                         <p>{!! $texts[1]->textContent; !!}</p>
-                        <p><a href="/productos#load-amasadoras" class="link-buton">Nuestros Equipos</a></p>
+                        <p><a href={{ url('/productos#load-amasadoras') }} class="link-buton">Nuestros Equipos</a></p>
                     </div>
 
 
@@ -71,13 +71,13 @@
                     <div class="contenido-texto" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
                         <h2>{{ $texts[2]->textName; }}</h2>
                         <p>{!! $texts[2]->textContent; !!}</p>
-                        <p><a href="/productos#load-maquinas" class="link-buton">Nuestros Equipos</a></p>
+                        <p><a href={{ url('/productos#load-maquinas') }} class="link-buton">Nuestros Equipos</a></p>
                     </div>
 
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-5">
-                    <img src="assets/images/maquina-contorno02.png" alt="" class="img-fluid">
+                    <img src={{ url('/assets/images/maquina-contorno02.png') }} alt="" class="img-fluid">
                 </div>
 
             </div>
@@ -98,12 +98,12 @@
                     <div class="contenido-texto" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
                         <h2>{{ $texts[3]->textName; }}</h2>
                         <p>{!! $texts[3]->textContent; !!}</p>
-                        <p><a href="/productos#load-batidoras" class="link-buton">Nuestros Equipos</a></p>
+                        <p><a href={{ url('/productos#load-batidoras') }} class="link-buton">Nuestros Equipos</a></p>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-5">
-                    <img src="assets/images/maquina-contorno03.png" alt="" class="img-fluid">
+                    <img src={{ url('/assets/images/maquina-contorno03.png') }} alt="" class="img-fluid">
                 </div>
 
             </div>
@@ -125,13 +125,13 @@
                     <div class="contenido-texto" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000">
                         <h2>{{ $texts[4]->textName; }}</h2>
                         <p>{!! $texts[4]->textContent; !!}</p>
-                        <p><a href="/productos#load-hornos" class="link-buton">Nuestros Equipos</a></p>
+                        <p><a href={{ url('/productos#load-hornos') }} class="link-buton">Nuestros Equipos</a></p>
                     </div>
 
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-5">
-                    <img src="assets/images/maquina-contorno04.png" alt="" class="img-fluid">
+                    <img src={{ url('/assets/images/maquina-contorno04.png') }} alt="" class="img-fluid">
                 </div>
 
             </div>
@@ -152,7 +152,7 @@
                         >
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="assets/images/preventa.jpg" class="card-img-top" style="border-radius: 0;">
+                                <img src={{ url('/assets/images/preventa.jpg') }} class="card-img-top" style="border-radius: 0;">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
@@ -171,7 +171,7 @@
                         >
                         <div class="row g-0">
                             <div class="col-md-4" >
-                                <img src="assets/images/postventa.jpg" class="card-img-top" style="border-radius: 0;" id="imgposventa">
+                                <img src={{ url('/assets/images/postventa.jpg') }} class="card-img-top" style="border-radius: 0;" id="imgposventa">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
@@ -264,7 +264,7 @@
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-3" data-aos="fade-left" data-aos-delay="50" data-aos-duration="1000">
-                    <img src="assets/images/que-es-mercancia-aduana.jpg" alt=""
+                    <img src={{ url('/assets/images/que-es-mercancia-aduana.jpg') }} alt=""
                         class="img-fluid shadow-box border-color-secondary rounded30">
 
                 </div>
@@ -297,10 +297,10 @@
                             data-aos-duration="500">
                             <h3>AMASADORAS</h3>
                             <div class="card shadow-box separacion-2-columnas" style="border-radius: 0;">
-                                <img src="assets/images/maquina-muestra1.png" class="card-img-top"
+                                <img src={{ url('/assets/images/maquina-muestra1.png') }} class="card-img-top"
                                     style="border-radius: 0;">
                                 <div class="card-body">
-                                    <p><a href="/productos#load-amasadoras" class="link-buton-block">Ver más</a></p>
+                                    <p><a href={{ url('/productos#load-amasadoras') }} class="link-buton-block">Ver más</a></p>
                                 </div>
                             </div>
 
@@ -310,10 +310,10 @@
                             data-aos-duration="500">
                             <h3>BATIDORAS</h3>
                             <div class="card shadow-box separacion-2-columnas" style="border-radius: 0;">
-                                <img src="assets/images/maquina-muestra2.png" class="card-img-top"
+                                <img src={{ url('/assets/images/maquina-muestra2.png') }} class="card-img-top"
                                     style="border-radius: 0;">
                                 <div class="card-body">
-                                    <p><a href="/productos#load-batidoras" class="link-buton-block">Ver más</a></p>
+                                    <p><a href={{ url('/productos#load-batidoras') }} class="link-buton-block">Ver más</a></p>
                                 </div>
                             </div>
 
@@ -323,10 +323,10 @@
                             data-aos-duration="500">
                             <h3>MÁQUINAS</h3>
                             <div class="card shadow-box separacion-2-columnas" style="border-radius: 0;">
-                                <img src="assets/images/maquina-muestra3.png" class="card-img-top"
+                                <img src={{ url('/assets/images/maquina-muestra3.png') }} class="card-img-top"
                                     style="border-radius: 0;">
                                 <div class="card-body">
-                                    <p><a href="/productos#load-maquinas" class="link-buton-block">Ver más</a></p>
+                                    <p><a href={{ url('/productos#load-maquinas') }} class="link-buton-block">Ver más</a></p>
                                 </div>
                             </div>
 
@@ -336,10 +336,10 @@
                             data-aos-duration="500">
                             <h3>HORNOS</h3>
                             <div class="card shadow-box separacion-2-columnas" style="border-radius: 0;">
-                                <img src="assets/images/maquina-muestra4.png" class="card-img-top"
+                                <img src={{ url('/assets/images/maquina-muestra4.png') }} class="card-img-top"
                                     style="border-radius: 0;">
                                 <div class="card-body">
-                                    <p><a href="/productos#load-hornos" class="link-buton-block">Ver más</a></p>
+                                    <p><a href={{ url('/productos#load-hornos') }} class="link-buton-block">Ver más</a></p>
                                 </div>
                             </div>
 
@@ -396,7 +396,7 @@
                     <div class="contenido-texto">
                         <h2>CONTACTO</h2>
 
-                        <form id="contactForm" action="/assets/send/envio.php" method="post">
+                        <form id="contactForm" action={{ url('/assets/send/envio.php') }} method="post">
 
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombre y Apellido</label>

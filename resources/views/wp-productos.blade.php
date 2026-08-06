@@ -34,7 +34,7 @@
                                                 style="border-radius: 0;">
                                             <h3>{{ $producto->productName }}</h3>
                                             <div class="card-body">
-                                                <p><a href="/productos/{{ Str::lower(Str::ascii($producto->getCategoria->categoryName)) }}/{{ $producto->productHash }}" class="link-buton-block">Ver más</a></p>
+                                                <p><a href={{ url('/productos/' . Str::lower(Str::ascii($producto->getCategoria->categoryName)) . '/' . $producto->productHash) }} class="link-buton-block">Ver más</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -79,8 +79,7 @@
                                     style="border-radius: 0;">
                                 <h3>{{ $producto->productName }}</h3>
                                 <div class="card-body">
-                                    <p><a href="/productos/{{ Str::lower(Str::ascii($producto->getCategoria->categoryName)) }}/{{ $producto->productHash }}"
-                                            class="link-buton-block">Ver más</a></p>
+                                    <p><a href={{ url('/productos/' . Str::lower(Str::ascii($producto->getCategoria->categoryName)) . '/' . $producto->productHash) }} class="link-buton-block">Ver más</a></p>
                                 </div>
                             </div>
                         </div>
@@ -101,8 +100,7 @@
                                     style="border-radius: 0;">
                                 <h3>{{ $producto->productName }}</h3>
                                 <div class="card-body">
-                                    <p><a href="/productos/{{ Str::lower(Str::ascii($producto->getCategoria->categoryName)) }}/{{ $producto->productHash }}"
-                                            class="link-buton-block">Ver más</a></p>
+                                    <p><a href={{ url('/productos/' . Str::lower(Str::ascii($producto->getCategoria->categoryName)) . '/' . $producto->productHash) }} class="link-buton-block">Ver más</a></p>
                                 </div>
                             </div>
                         </div>
@@ -114,8 +112,7 @@
                                     style="border-radius: 0;">
                                 <h3>{{ $producto->productName }}</h3>
                                 <div class="card-body">
-                                    <p><a href="/productos/{{ Str::lower(Str::ascii($producto->getCategoria->categoryName)) }}/{{ $producto->productHash }}"
-                                            class="link-buton-block">Ver más</a></p>
+                                    <p><a href={{ url('/productos/' . Str::lower(Str::ascii($producto->getCategoria->categoryName)) . '/' . $producto->productHash) }} class="link-buton-block">Ver más</a></p>
                                 </div>
                             </div>
                         </div>

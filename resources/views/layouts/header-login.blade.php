@@ -11,16 +11,16 @@
     <meta name="author" content="">
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <link rel="shortcut icon" href="{{ url('/assets/images/favicon.ico') }}">
 
     <!-- Theme Config Js -->
     <script src="/assets/js/config.js"></script>
 
     <!-- Vendor css -->
-    <link href="/assets/css/vendors.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ url('/assets/css/vendors.min.css') }}" rel="stylesheet" type="text/css">
 
     <!-- App css -->
-    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ url('/assets/css/app.min.css') }}" rel="stylesheet" type="text/css">
 </head>
 
 <body>

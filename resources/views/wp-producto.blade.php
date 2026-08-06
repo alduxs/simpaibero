@@ -17,10 +17,10 @@
                     data-aos-duration="1000">
                     <div class="imagenes">
                         <div class="imagen-pincipal"
-                            style="background-image: url('../../../../assets/productos/big/{{ $images[0]['imageName'] }}');"
+                            style="background-image: url('{{ url('/assets/productos/big/' . $images[0]['imageName']) }}');"
                             id="imagen-principal-{{ $images[0]['imageId'] }}"></div>
                         @for($i = 1; $i < count($images); $i++) <div class="imagen-pincipal"
-                            style="background-image: url('../../../../assets/productos/big/{{ $images[$i]['imageName'] }}'); display:none;"
+                            style="background-image: url('{{ url('/assets/productos/big/' . $images[$i]['imageName']) }}'); display:none;"
                             id="imagen-principal-{{ $images[$i]['imageId'] }}">
                     </div>
 
@@ -28,10 +28,10 @@
 
                     <div class="imagen-thumbs">
                         <div class="imagen-thumb"
-                            style="background-image: url('../../../../assets/productos/small/{{ $images[0]['imageName'] }}');"
+                            style="background-image: url('{{ url('/assets/productos/small/' . $images[0]['imageName']) }}');"
                             id="thumb-{{ $images[0]['imageId'] }}"></div>
                         @for($i = 1; $i < count($images); $i++) <div class="imagen-thumb"
-                            style="background-image: url('../../../../assets/productos/small/{{ $images[$i]['imageName'] }}');"
+                            style="background-image: url('{{ url('/assets/productos/small/' . $images[$i]['imageName']) }}');"
                             id="thumb-{{ $images[$i]['imageId'] }}">
                     </div>
                     @endfor
@@ -85,7 +85,7 @@
                                 <img src="{{ asset('assets/productos/big/' . $relacionado->portada->imageName) }}" class="card-img-top" style="border-radius: 0;">
                                 <h3>{{ $relacionado->productName }}</h3>
                                 <div class="card-body">
-                                    <p><a href="/productos/{{ Str::lower(Str::ascii($relacionado->getCategoria->categoryName)) }}/{{ $relacionado->productHash }}" class="link-buton-block">Ver más</a></p>
+                                    <p><a href="{{ url('/productos/' . Str::lower(Str::ascii($relacionado->getCategoria->categoryName)) . '/' . $relacionado->productHash) }}" class="link-buton-block">Ver más</a></p>
                                 </div>
                             </div>
                         </div>

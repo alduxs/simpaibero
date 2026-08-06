@@ -4,8 +4,8 @@
             <!-- Brand Logo -->
             <a href="index2.html" class="logo">
                 <span class="logo logo-light">
-                    <span class="logo-lg"><img src="assets/images/logo-blanco.png" alt="logo"></span>
-                    <span class="logo-sm"><img src="assets/images/logo-sm.png" alt="small logo"></span>
+                    <span class="logo-lg"><img src={{ url('/assets/images/logo-blanco.png') }} alt="logo"></span>
+                    <span class="logo-sm"><img src={{ url('/assets/images/logo-sm.png') }} alt="small logo"></span>
                 </span>
 
             </a>

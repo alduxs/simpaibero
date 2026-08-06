@@ -41,9 +41,9 @@
                                     <h5>Imagen actual</h5>
                                     <div class="avatar avatar-xxl">
                                         @if($user->image)
-                                        <img src="/assets/images/users/{{$user->image}}" alt="avatar-2" class="img-fluid img-thumbnail rounded-circle">
+                                        <img src="{{ url('/assets/images/users/' . $user->image) }}" alt="avatar-2" class="img-fluid img-thumbnail rounded-circle">
                                         @else
-                                        <img src="/assets/images/users/usernoimge.jpg" alt="avatar-2" class="img-fluid img-thumbnail rounded-circle">
+                                        <img src="{{ url('/assets/images/users/usernoimge.jpg') }}" alt="avatar-2" class="img-fluid img-thumbnail rounded-circle">
                                         @endif
                                     </div>
 

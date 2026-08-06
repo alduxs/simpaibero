@@ -25,9 +25,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/carousel/carousel.css" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/styles.css?v=9" />
+    <link rel="stylesheet" href="{{ url('/assets/css/styles.css?v=9') }}" />
     <!-- FONTAWESOME -->
-    <link rel="stylesheet" href="/assets/css/fontawsome/css/all.css" />
+    <link rel="stylesheet" href="{{ url('/assets/css/fontawsome/css/all.css') }}" />
     <!-- Animacion -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -41,7 +41,7 @@
 
         @include('layouts.wp-top-navigation')
 
-        <div class="contenedor-slide" id="contenedor-slide" style="background-image: url('assets/slides/slide04.jpg');background-repeat: no-repeat;background-position: center;">
+        <div class="contenedor-slide" id="contenedor-slide" style="background-image: url('{{ url('/assets/slides/slide04.jpg') }}');background-repeat: no-repeat;background-position: center;">
             <div class="contenido">
                 <div class="isotipo trasicion opacity-0" id="isotipo">
                     <img src="assets/images/isotipo.png" alt="">
