@@ -293,7 +293,7 @@
                 <div class="col-12 col-lg-10 offset-lg-1">
                     <div class="row">
 
-                        <div class="col-12 col-md-6 col-lg-3" data-aos="fade-right" data-aos-delay="100"
+                        <div class="col-12 col-md-6 col-lg-4" data-aos="fade-right" data-aos-delay="100"
                             data-aos-duration="500">
                             <h3>AMASADORAS</h3>
                             <div class="card shadow-box separacion-2-columnas" style="border-radius: 0;">
@@ -306,7 +306,7 @@
 
                         </div>
 
-                        <div class="col-12 col-md-6 col-lg-3" data-aos="fade-right" data-aos-delay="600"
+                        <div class="col-12 col-md-6 col-lg-4" data-aos="fade-right" data-aos-delay="600"
                             data-aos-duration="500">
                             <h3>BATIDORAS</h3>
                             <div class="card shadow-box separacion-2-columnas" style="border-radius: 0;">
@@ -319,7 +319,7 @@
 
                         </div>
 
-                        <div class="col-12 col-md-6 col-lg-3" data-aos="fade-right" data-aos-delay="1100"
+                        <div class="col-12 col-md-6 col-lg-4" data-aos="fade-right" data-aos-delay="1100"
                             data-aos-duration="500">
                             <h3>MÁQUINAS</h3>
                             <div class="card shadow-box separacion-2-columnas" style="border-radius: 0;">
@@ -332,7 +332,7 @@
 
                         </div>
 
-                        <div class="col-12 col-md-6 col-lg-3" data-aos="fade-right" data-aos-delay="1700"
+                        <div class="col-12 col-md-6 col-lg-4" data-aos="fade-right" data-aos-delay="1700"
                             data-aos-duration="500">
                             <h3>HORNOS</h3>
                             <div class="card shadow-box separacion-2-columnas" style="border-radius: 0;">

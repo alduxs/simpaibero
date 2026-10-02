@@ -26,22 +26,22 @@
 
 
     <!-- Vendor js -->
-    <script src="/assets/js/vendors.min.js"></script>
+    <script src="{{ asset('assets/js/vendors.min.js') }}"></script>
 
     <!-- App js -->
-    <script src="/assets/js/app.js"></script>
+    <script src="{{ asset('assets/js/app.js') }}"></script>
 
     <!-- Custom js -->
-    <script src="/assets/js/custom.js"></script>
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
 
     <!-- Custom table -->
-	<script src="/assets/js/pages/custom-table.js"></script>
+	<script src="{{ asset('assets/js/pages/custom-table.js') }}"></script>
 
     <!-- Dashboard Page js -->
-    <script src="/assets/js/pages/dashboard.js"></script>
+    <script src="{{ asset('assets/js/pages/dashboard.js') }}"></script>
 
     <!-- Tynimce -->
-    <script src="/assets/js/plugins/tinymce/tinymce.min.js"></script>
+    <script src="{{ asset('assets/js/plugins/tinymce/tinymce.min.js') }}"></script>
 
 
     <!-- Google maps -->
@@ -49,9 +49,9 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8_03r9LkKX7DqnHDYfv8lbyvWH7gadwM&callback=initMap"></script>
 
     <!-- Custom js -->
-    <script src="/assets/js/custom-maps.js"></script>
-    <script src="/assets/js/custom-points.js"></script>
-    <script src="/assets/js/custom-related-products.js"></script>
+    <script src="{{ asset('assets/js/custom-maps.js') }}"></script>
+    <script src="{{ asset('assets/js/custom-points.js') }}"></script>
+    <script src="{{ asset('assets/js/custom-related-products.js') }}"></script>
 
 </body>
 

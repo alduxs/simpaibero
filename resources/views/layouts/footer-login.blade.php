@@ -1,10 +1,10 @@
 
     <!-- end auth-fluid-->
     <!-- Vendor js -->
-    <script src="/assets/js/vendors.min.js"></script>
+    <script src="{{ asset('assets/js/vendors.min.js') }}"></script>
 
     <!-- App js -->
-    <script src="/assets/js/app.js"></script>
+    <script src="{{ asset('assets/js/app.js') }}"></script>
 
 </body>
 
