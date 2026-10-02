@@ -43,7 +43,7 @@
                 @endif
 
                 <div class="card-body">
-                    <form action="/image/store" method="post" enctype="multipart/form-data">
+                    <form action="{{ url('/image/store') }}" method="post" enctype="multipart/form-data">
                         @csrf
 
                         <div class="row gy-2 gx-2 align-items-center">

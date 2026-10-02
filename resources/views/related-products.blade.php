@@ -41,7 +41,7 @@
 
 
                 <div class="card-body">
-                    <form action="/related-product/store" method="post" enctype="multipart/form-data">
+                    <form action="{{ url('/related-product/store') }}" method="post" enctype="multipart/form-data">
                         @csrf
 
                         <div class="row gy-2 gx-2 align-items-center">

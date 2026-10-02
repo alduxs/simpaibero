@@ -86,11 +86,11 @@
                                 <td>
                                     <div class="d-flex justify-content-center gap-1">
 
-                                        <x-botones href="/user/{{ $user->id }}/edit" button="btn-light">
+                                        <x-botones href="{{ url('/user/'.$user->id.'/edit') }}" button="btn-light">
                                             <i class="ti ti-edit fs-lg"></i>
                                         </x-botones>
 
-                                        <x-botones href="/user/{{ $user->id  }}/delete" button="btn-danger">
+                                        <x-botones href="{{ url('/user/'.$user->id.'/delete') }}" button="btn-danger">
                                             <i class="ti ti-trash fs-lg"></i>
                                         </x-botones>
 

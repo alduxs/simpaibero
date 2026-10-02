@@ -1,5 +1,5 @@
 
-
+const relatedProductsAppBaseUrl = new URL(`${document.currentScript.dataset.baseUrl.replace(/\/+$/, "")}/`);
 const deleteRelatedProductModal = document.getElementById('delete-related-product-modal');
 const miModalProduct = new bootstrap.Modal(deleteRelatedProductModal);
 
@@ -34,6 +34,6 @@ function setDeleteRelatedProductAction(relatedProductRegisterId) {
 
 
     const deleteRelatedProductForm = document.getElementById('deleteRelatedProductForm');
-    deleteRelatedProductForm.action = `/related-product/${relatedProductRegisterId}/destroy`;
+    deleteRelatedProductForm.action = new URL(`related-product/${relatedProductRegisterId}/destroy`, relatedProductsAppBaseUrl).href;
     deleteRelatedProductForm.submit();
 }

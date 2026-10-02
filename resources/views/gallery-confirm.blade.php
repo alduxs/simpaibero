@@ -26,13 +26,13 @@
                             </div>
 
                             <div class="card-body">
-                                <form action="/gallery/{{ $gallery->galleryId }}/destroy" method="post">
+                                <form action="{{ url('/gallery/'.$gallery->galleryId.'/destroy') }}" method="post">
                                     @csrf
                                     @method('delete')
 
                                     <p>¿Está seguro que desea borrar la galería:  <span class="text-danger"><strong>{{ $gallery->galleryName }}</strong></span>?</p>
 
-                                    <p class="text-center"><button type="submit" class="btn btn-danger">Borrar</button> <a href="/galleries" class="btn btn-primary">Cancelar</a> </p>
+                                    <p class="text-center"><button type="submit" class="btn btn-danger">Borrar</button> <a href="{{ url('/galleries') }}" class="btn btn-primary">Cancelar</a> </p>
 
                                 </form>
                             </div> <!-- end card-body -->

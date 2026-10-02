@@ -233,7 +233,7 @@
                     <div class="contenido-texto" data-aos="fade-right" data-aos-delay="50" data-aos-duration="500">
                         <h2>{{ $texts[9]->textName; }}</h2>
                         {!! $texts[9]->textContent; !!}
-                        <p data-aos="fade" data-aos-delay="100" data-aos-duration="500"><a href="/#contacto"
+                        <p data-aos="fade" data-aos-delay="100" data-aos-duration="500"><a href="{{ url('/#contacto') }}"
                                 class="link-buton">Formulario</a></p>
                     </div>
 

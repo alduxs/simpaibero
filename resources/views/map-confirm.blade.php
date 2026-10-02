@@ -26,13 +26,13 @@
                             </div>
 
                             <div class="card-body">
-                                <form action="/category/{{ $category->categoryId }}/destroy" method="post">
+                                <form action="{{ url('/map/'.$map->mapId.'/destroy') }}" method="post">
                                     @csrf
                                     @method('delete')
 
                                     <p>¿Está seguro que desea borrar la categoría:  <span class="text-danger"><strong>{{ $category->categoryName }}</strong></span>?</p>
 
-                                    <p class="text-center"><button type="submit" class="btn btn-danger">Borrar</button> <a href="/categories" class="btn btn-primary">Cancelar</a> </p>
+                                    <p class="text-center"><button type="submit" class="btn btn-danger">Borrar</button> <a href="{{ url('/maps') }}" class="btn btn-primary">Cancelar</a> </p>
 
                                 </form>
                             </div> <!-- end card-body -->

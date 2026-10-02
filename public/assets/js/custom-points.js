@@ -1,3 +1,4 @@
+const pointsAppBaseUrl = new URL(`${document.currentScript.dataset.baseUrl.replace(/\/+$/, "")}/`);
 const seeModal = document.getElementById('see-modal');
 const miModalMap = new bootstrap.Modal(seeModal);
 
@@ -75,6 +76,6 @@ function setDeletePointAction(pointId) {
     console.log(pointId);
 
     const deleteForm = document.getElementById('deletePointForm');
-    deleteForm.action = `/point/${pointId}/destroy`;
+    deleteForm.action = new URL(`point/${pointId}/destroy`, pointsAppBaseUrl).href;
     deleteForm.submit();
 }

@@ -1,3 +1,4 @@
+const mapsAppBaseUrl = new URL(`${document.currentScript.dataset.baseUrl.replace(/\/+$/, "")}/`);
 const mapModalElement = document.getElementById("map-modal");
 
 if (mapModalElement) {
@@ -13,7 +14,7 @@ if (mapModalElement) {
 
             document.getElementById("map-modalLabel").textContent = mapName;
 
-            fetch(`/map/${mapId}/points`)
+            fetch(new URL(`map/${mapId}/points`, mapsAppBaseUrl))
                 .then((response) => response.json())
                 .then((points) => {
                     const mapContainer =

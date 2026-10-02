@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="/product/store" method="post" enctype="multipart/form-data">
+                    <form action="{{ url('/product/store') }}" method="post" enctype="multipart/form-data">
                         @csrf
 
                         <div class="mb-3">

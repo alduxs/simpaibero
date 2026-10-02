@@ -1,5 +1,5 @@
 <div class="top-navigation">
-    <div class="logo"><a href="/"><img src={{ url('/assets/images/wp-logo.png') }} alt="" class="img-fluid"></a></div>
+    <div class="logo"><a href="{{ url('/') }}"><img src={{ url('/assets/images/wp-logo.png') }} alt="" class="img-fluid"></a></div>
     <nav class="menu" id="menu">
         <ul>
             <li><a href={{ url('/#home') }}>Home</a></li>
@@ -35,7 +35,7 @@
 </div>
 <div class="find-container" id="findcontainer">
     <div class="find-box">
-        <form action="/search" method="get">
+        <form action="{{ url('/search') }}" method="get">
             <input type="text" name="q" id="search-input" placeholder="Buscar..." value="{{ request('q') }}">
             <button type="submit">Buscar</button>
         </form>

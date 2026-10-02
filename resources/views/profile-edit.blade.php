@@ -30,7 +30,7 @@
                             @endif
 
                             <div class="card-body">
-                                <form action="/user/{{ $user->id }}/profile/update" method="post" enctype="multipart/form-data">
+                                <form action="{{ url('/user/'.$user->id.'/profile/update') }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     @method('put')
 

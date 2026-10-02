@@ -26,13 +26,13 @@
                             </div>
 
                             <div class="card-body">
-                                <form action="/product/{{ $product->productId }}/destroy" method="post">
+                                <form action="{{ url('/product/'.$product->productId.'/destroy') }}" method="post">
                                     @csrf
                                     @method('delete')
 
                                     <p>¿Está seguro que desea borrar el producto:  <span class="text-danger"><strong>{{ $product->productName }}</strong></span>?</p>
 
-                                    <p class="text-center"><button type="submit" class="btn btn-danger">Borrar</button> <a href="/products" class="btn btn-primary">Cancelar</a> </p>
+                                    <p class="text-center"><button type="submit" class="btn btn-danger">Borrar</button> <a href="{{ url('/products') }}" class="btn btn-primary">Cancelar</a> </p>
 
                                 </form>
                             </div> <!-- end card-body -->

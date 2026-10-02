@@ -90,7 +90,7 @@
 
 
                                 <!-- My Profile -->
-                                <a href="/user/{{ auth()->user()->id }}/profile/edit" class="dropdown-item">
+                                <a href="{{ url('/user/'.auth()->user()->id.'/profile/edit') }}" class="dropdown-item">
                                     <i class="ti ti-user-circle me-2 fs-17 align-middle"></i>
                                     <span class="align-middle">Perfil</span>
                                 </a>

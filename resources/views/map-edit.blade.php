@@ -26,7 +26,7 @@
                             </div>
 
                             <div class="card-body">
-                                <form action="/map/{{ $map->mapId }}/update" method="post">
+                                <form action="{{ url('/map/'.$map->mapId.'/update') }}" method="post">
                                     @csrf
                                     @method('put')
 

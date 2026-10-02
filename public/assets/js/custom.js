@@ -1,3 +1,4 @@
+const imageAppBaseUrl = new URL(`${document.currentScript.dataset.baseUrl.replace(/\/+$/, "")}/`);
 const deleteModalElement = document.getElementById("delete-modal");
 
 
@@ -9,7 +10,7 @@ if(deleteModalElement){
     const btDeleteImage = document.getElementById('btDeleteImage');
 
     function confirmDeleteAction(imageId,imageName) {
-        imageCont.src = `../../assets/productos/big/${imageName}`;
+        imageCont.src = new URL(`assets/productos/big/${imageName}`, imageAppBaseUrl).href;
         imageNameCont.textContent = imageName;
         btDeleteImage.setAttribute('onclick', `setDeleteFormAction('${imageId}')`);
 
@@ -18,9 +19,7 @@ if(deleteModalElement){
 
     function setDeleteFormAction(imageId) {
         const deleteForm = document.getElementById('deleteForm');
-        deleteForm.action = `/image/${imageId}/destroy`;
+        deleteForm.action = new URL(`image/${imageId}/destroy`, imageAppBaseUrl).href;
         deleteForm.submit();
     }
 }
-
-

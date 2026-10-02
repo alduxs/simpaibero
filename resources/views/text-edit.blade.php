@@ -26,7 +26,7 @@
                             </div>
 
                             <div class="card-body">
-                                <form action="/text/{{ $text->textId }}/update" method="post">
+                                <form action="{{ url('/text/'.$text->textId.'/update') }}" method="post">
                                     @csrf
                                     @method('put')
 

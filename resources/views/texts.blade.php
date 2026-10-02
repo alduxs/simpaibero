@@ -91,7 +91,7 @@
                                 <td>
                                     <div class="d-flex justify-content-center gap-1">
 
-                                        <x-botones href="/text/{{ $text->textId }}/edit" button="btn-light">
+                                        <x-botones href="{{ url('/text/'.$text->textId.'/edit') }}" button="btn-light">
                                             <i class="ti ti-edit fs-xxl"></i>
                                         </x-botones>
 

@@ -26,7 +26,7 @@
                             </div>
 
                             <div class="card-body">
-                                <form action="/gallery/{{ $gallery->galleryId }}/update" method="post">
+                                <form action="{{ url('/gallery/'.$gallery->galleryId.'/update') }}" method="post">
                                     @csrf
                                     @method('put')
 

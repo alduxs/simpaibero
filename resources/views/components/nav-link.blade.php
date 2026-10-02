@@ -21,13 +21,13 @@
     <div class="collapse" id="{{$namelink}}" style="">
         <ul class="sub-menu">
             <li class="side-nav-item">
-                <a href="{{$linkList}}" class="side-nav-link">
+                <a href="{{ url($linkList) }}" class="side-nav-link">
                     <span class="menu-text" data-lang="listar">Listar</span>
                 </a>
             </li>
 
             <li class="side-nav-item">
-                <a href="{{$linkAdd}}" class="side-nav-link">
+                <a href="{{ url($linkAdd) }}" class="side-nav-link">
                     <span class="menu-text" data-lang="agregar">Agregar</span>
                 </a>
             </li>

@@ -84,11 +84,11 @@
                                 <td>
                                     <div class="d-flex justify-content-center gap-1">
 
-                                        <x-botones href="/category/{{ $category->categoryId }}/edit" button="btn-light">
+                                        <x-botones href="{{ url('/category/'.$category->categoryId.'/edit') }}" button="btn-light">
                                             <i class="ti ti-edit fs-lg"></i>
                                         </x-botones>
 
-                                        <x-botones href="/category/{{ $category->categoryId }}/delete" button="btn-danger">
+                                        <x-botones href="{{ url('/category/'.$category->categoryId.'/delete') }}" button="btn-danger">
                                             <i class="ti ti-trash fs-lg"></i>
                                         </x-botones>
 

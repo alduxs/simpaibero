@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="/product/{{ $product->productId }}/update" method="post" enctype="multipart/form-data">
+                    <form action="{{ url('/product/'.$product->productId.'/update') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('put')
 

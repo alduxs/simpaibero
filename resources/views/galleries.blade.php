@@ -85,15 +85,15 @@
                                 <td>
                                     <div class="d-flex justify-content-center gap-1">
 
-                                        <x-botones href="/images/{{ $gallery->galleryId }}/list" button="btn-light">
+                                        <x-botones href="{{ url('/images/'.$gallery->galleryId.'/list') }}" button="btn-light">
                                             <i class="ti ti-polaroid fs-xxl "></i>
                                         </x-botones>
 
-                                        <x-botones href="/gallery/{{ $gallery->galleryId }}/edit" button="btn-light">
+                                        <x-botones href="{{ url('/gallery/'.$gallery->galleryId.'/edit') }}" button="btn-light">
                                             <i class="ti ti-edit fs-xxl"></i>
                                         </x-botones>
 
-                                        <x-botones href="/gallery/{{ $gallery->galleryId }}/delete" button="btn-danger">
+                                        <x-botones href="{{ url('/gallery/'.$gallery->galleryId.'/delete') }}" button="btn-danger">
                                             <i class="ti ti-trash fs-xxl"></i>
                                         </x-botones>
 

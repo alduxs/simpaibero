@@ -88,7 +88,7 @@
                                 <td>
                                     <div class="d-flex justify-content-center gap-1">
 
-                                        <x-botones href="/points/{{ $map->mapId }}/list" button="btn-light">
+                                        <x-botones href="{{ url('/points/'.$map->mapId.'/list') }}" button="btn-light">
                                             <i class="ti ti-map-pin fs-lg"></i>
                                         </x-botones>
 
@@ -96,11 +96,11 @@
                                             <i class="ti ti-map-2 fs-lg"></i>
                                         </x-botones>
 
-                                         <x-botones href="/map/{{ $map->mapId }}/edit" button="btn-light">
+                                         <x-botones href="{{ url('/map/'.$map->mapId.'/edit') }}" button="btn-light">
                                             <i class="ti ti-edit fs-lg"></i>
                                         </x-botones>
 
-                                        <x-botones href="/map/{{ $map->mapId }}/delete" button="btn-danger">
+                                        <x-botones href="{{ url('/map/'.$map->mapId.'/delete') }}" button="btn-danger">
                                             <i class="ti ti-trash fs-lg"></i>
                                         </x-botones>
 

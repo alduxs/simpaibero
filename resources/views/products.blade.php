@@ -93,15 +93,15 @@
                                 <td>
                                     <div class="d-flex justify-content-center gap-1">
 
-                                        <x-botones href="/related-products/{{ $product->productId }}/list" button="btn-light">
+                                        <x-botones href="{{ url('/related-products/'.$product->productId.'/list') }}" button="btn-light">
                                             <i class="ti ti-hierarchy-2 fs-xxl"></i>
                                         </x-botones>
 
-                                        <x-botones href="/product/{{ $product->productId }}/edit" button="btn-light">
+                                        <x-botones href="{{ url('/product/'.$product->productId.'/edit') }}" button="btn-light">
                                             <i class="ti ti-edit fs-xxl"></i>
                                         </x-botones>
 
-                                        <x-botones href="/product/{{ $product->productId }}/delete" button="btn-danger">
+                                        <x-botones href="{{ url('/product/'.$product->productId.'/delete') }}" button="btn-danger">
                                             <i class="ti ti-trash fs-xxl"></i>
                                         </x-botones>
 

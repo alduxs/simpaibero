@@ -26,7 +26,7 @@
                             </div>
 
                             <div class="card-body">
-                                <form action="/category/{{ $category->categoryId }}/update" method="post">
+                                <form action="{{ url('/category/'.$category->categoryId.'/update') }}" method="post">
                                     @csrf
                                     @method('put')
 

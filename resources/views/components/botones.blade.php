@@ -1,1 +1,1 @@
-<a {{ $attributes }} class="btn {{$button}} btn-icon btn-sm rounded-circle">{{ $slot }}</a>
+<a href="{{ url($attributes->get('href')) }}" {{ $attributes->except('href') }} class="btn {{$button}} btn-icon btn-sm rounded-circle">{{ $slot }}</a>

@@ -26,13 +26,13 @@
                             </div>
 
                             <div class="card-body">
-                                <form action="/user/{{ $user->id }}/destroy" method="post">
+                                <form action="{{ url('/user/'.$user->id.'/destroy') }}" method="post">
                                     @csrf
                                     @method('delete')
 
                                     <p>¿Está seguro que desea borrar el usuario:  <span class="text-danger"><strong>{{ $user->name }}</strong></span>?</p>
 
-                                    <p class="text-center"><button type="submit" class="btn btn-danger">Borrar</button> <a href="/users" class="btn btn-primary">Cancelar</a> </p>
+                                    <p class="text-center"><button type="submit" class="btn btn-danger">Borrar</button> <a href="{{ url('/users') }}" class="btn btn-primary">Cancelar</a> </p>
 
                                 </form>
                             </div> <!-- end card-body -->
