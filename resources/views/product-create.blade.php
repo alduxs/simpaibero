@@ -60,6 +60,19 @@
 
                         <div class="border-top border-dashed my-3"></div>
 
+                         <div class="mb-3">
+                            <label for="productTag" class="form-label">Etiqueta</label>
+                            <input type="text" class="form-control" id="productTag" name="productTag"
+                                value="{{ old('productTag') }}">
+                            @if ($errors->has('productTag'))
+                            <div class="invalid-feedback" style="display: block">{{ $errors->first('productTag') }}
+                            </div>
+                            @endif
+
+                        </div>
+
+                        <div class="border-top border-dashed my-3"></div>
+
                         <div class="mb-3">
                             <label for="productDescription" class="form-label">Descripción</label>
                             <textarea class="form-control" id="txtEditor" name="productDescription"
