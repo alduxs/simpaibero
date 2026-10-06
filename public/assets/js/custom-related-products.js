@@ -1,7 +1,7 @@
 
 const relatedProductsAppBaseUrl = new URL(`${document.currentScript.dataset.baseUrl.replace(/\/+$/, "")}/`);
 const deleteRelatedProductModal = document.getElementById('delete-related-product-modal');
-const miModalProduct = new bootstrap.Modal(deleteRelatedProductModal);
+const miModalProduct = deleteRelatedProductModal ? new bootstrap.Modal(deleteRelatedProductModal) : null;
 
 const btDeleteRelatedProduct = document.getElementById('btDeleteRelatedProduct');
 

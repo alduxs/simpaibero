@@ -13,10 +13,9 @@ window.addEventListener('DOMContentLoaded', () => {
         license_key: 'gpl',     // Necesario en versiones 7+ para modo free
         language: 'es',         // Si quieres el idioma en español
         promotion: false,       // Quita el botón de "Upgrade"
-        base_url: '/build/assets/js/tinymce', // Ruta donde Vite copió los archivos
+        base_url: new URL('./js/tinymce', import.meta.url).pathname,
         suffix: '.min',
         plugins: 'lists link image table code help wordcount',
         toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | removeformat | help'
     });
 });
-

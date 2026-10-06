@@ -58,6 +58,7 @@ class ProductController extends Controller
 
 
         $productName = $request->productName;
+        $productTag = $request->productTag;
         $productDescription = $request->productDescription;
         $productPosition = $request->productPosition;
         $productCategoryId = $request->productCategoryId;
@@ -70,6 +71,7 @@ class ProductController extends Controller
             $product = new Product;
             // asignamos atributos
             $product->productName = $productName;
+            $product->productTag = $productTag;
             $product->productDescription = $productDescription;
             $product->productPosition = $productPosition;
             $product->productCategoryId = $productCategoryId;
@@ -160,6 +162,7 @@ class ProductController extends Controller
     public function update(ProductRequest $request, Product $product): RedirectResponse
     {
         $productName = $request->productName;
+        $productTag = $request->productTag;
         $productDescription = $request->productDescription;
         $productPosition = $request->productPosition;
         $productCategoryId = $request->productCategoryId;
@@ -167,15 +170,18 @@ class ProductController extends Controller
         $productActiv = $request->productActiv;
         $productHash = Str::slug($request->productName, '-');
 
+
         try {
             //asignamos atributos
             $product->productName = $productName;
+            $product->productTag = $productTag;
             $product->productDescription = $productDescription;
             $product->productPosition = $productPosition;
             $product->productCategoryId = $productCategoryId;
             $product->productGalleryId = $productGalleryId;
             $product->productActiv = $productActiv;
             $product->productHash = $productHash;
+
 
             // --- LÓGICA PARA ACTUALIZAR EL PDF ---
             if ($request->hasFile('productFichaTecnica')) {

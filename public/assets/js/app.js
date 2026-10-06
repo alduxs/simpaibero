@@ -311,7 +311,6 @@ class App {
                 license_key: "gpl",
                 language: "es",
                 promotion: !1,
-                base_url: "/assets/js/plugins/tinymce",
                 suffix: ".min",
                 plugins: "lists link image table code help wordcount",
                 toolbar:
@@ -697,7 +696,10 @@ class Plugins {
 class I18nManager {
     constructor({
         defaultLang: e = "en",
-        langPath: t = "assets/data/translations/",
+        langPath: t = new URL(
+            "../data/translations/",
+            document.querySelector('script[src*="/assets/js/app.js"]').src,
+        ).href,
         langImageSelector: i = "#selected-language-image",
         langCodeSelector: a = "#selected-language-code",
         translationKeySelector: s = "[data-lang]",

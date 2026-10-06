@@ -1,15 +1,20 @@
 const pointsAppBaseUrl = new URL(`${document.currentScript.dataset.baseUrl.replace(/\/+$/, "")}/`);
 const seeModal = document.getElementById('see-modal');
-const miModalMap = new bootstrap.Modal(seeModal);
+const miModalMap = seeModal ? new bootstrap.Modal(seeModal) : null;
 
 const deletePointModal = document.getElementById('delete-point-modal');
-const miModalMap2 = new bootstrap.Modal(deletePointModal);
+const miModalMap2 = deletePointModal ? new bootstrap.Modal(deletePointModal) : null;
 
 const btDeletePoint = document.getElementById('btDeletePoint');
 
 
 function initMap() {
-    var map = new google.maps.Map(document.getElementById("map"), {
+    const mapElement = document.getElementById("map");
+    if (!mapElement) {
+        return;
+    }
+
+    new google.maps.Map(mapElement, {
         zoom: 3,
         disableDefaultUI: true,
     });
