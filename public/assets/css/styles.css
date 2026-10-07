@@ -888,11 +888,19 @@ footer .seguinos {
   border: 0px;
 }
 .section-productos .card h3 {
-  font-family: "Airbnb Medium", serif;
+  font-family: "Airbnb Bold", serif;
   font-size: 1.2rem;
   margin-top: 20px;
   color: #606060;
   margin-bottom: 5px;
+  padding: 0px 25px;
+}
+.section-productos .card h4 {
+  font-family: "Airbnb Regular", serif;
+  font-size: 1rem;
+  margin-top: 5px;
+  color: #606060;
+  margin-bottom: 0px;
   padding: 0px 25px;
 }
 

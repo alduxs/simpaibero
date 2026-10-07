@@ -28,13 +28,19 @@
                                         <h2>Resultados para la busqueda: {{ $searchTerm}}</h2>
                                     </div>
                                     @foreach( $productos as $producto )
+                                    @php
+                                    $categoryName = optional($producto->getCategoria)->categoryName;
+                                    @endphp
                                     <div class="col-12 col-md-4">
                                         <div class="card  separacion-2-columnas" style="border-radius: 0;">
-                                            <img src="assets/productos/big/{{ $producto->portada->imageName }}" class="card-img-top"
+                                            <img src="{{ filled($categoryName) ? asset('assets/productos/big/' . optional($producto->portada)->imageName) : asset('assets/images/maquina-muestra1.png') }}" class="card-img-top"
                                                 style="border-radius: 0;">
                                             <h3>{{ $producto->productName }}</h3>
+                                            @if (filled($producto->productTag))
+                                            <h4>{{ $producto->productTag }}</h4>
+                                            @endif
                                             <div class="card-body">
-                                                <p><a href={{ url('/productos/' . Str::lower(Str::ascii($producto->getCategoria->categoryName)) . '/' . $producto->productHash) }} class="link-buton-block">Ver más</a></p>
+                                                <p><a href="{{ url('/productos/' . Str::lower(Str::ascii($categoryName ?: 'sin-categoria')) . '/' . $producto->productHash) }}" class="link-buton-block">Ver más</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -60,47 +66,58 @@
                     @endphp
                     <!-- AMASADORAS -->
                     @foreach( $productos as $producto )
-                    @if($categoria != $producto->getCategoria->categoryId)
+                    @php
+                    $categoryName = optional($producto->getCategoria)->categoryName;
+                    $categoryId = optional($producto->getCategoria)->categoryId;
+                    @endphp
+                    @if($categoria != $categoryId)
 
 
                     @if($categoria == 0)
                     <div class="row" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000"
-                        id="{{ Str::lower(Str::ascii($producto->getCategoria->categoryName)) }}">
+                        id="{{ Str::lower(Str::ascii($categoryName ?: 'sin-categoria')) }}">
 
+                        @if (filled($categoryName))
                         <div class="col-12">
-                            <h2>{{ Str::upper($producto->getCategoria->categoryName) }}</h2>
+                            <h2>{{ Str::upper($categoryName) }}</h2>
                         </div>
+                        @endif
                         @php
-                        $categoria = $producto->getCategoria->categoryId;
+                        $categoria = $categoryId;
                         @endphp
                         <div class="col-12 col-md-4">
                             <div class="card  separacion-2-columnas" style="border-radius: 0;">
-                                <img src="assets/productos/big/{{ $producto->portada->imageName }}" class="card-img-top"
+                                <img src="{{ filled($categoryName) ? asset('assets/productos/big/' . optional($producto->portada)->imageName) : asset('assets/images/maquina-muestra1.png') }}" class="card-img-top"
                                     style="border-radius: 0;">
                                 <h3>{{ $producto->productName }}</h3>
                                 <div class="card-body">
-                                    <p><a href={{ url('/productos/' . Str::lower(Str::ascii($producto->getCategoria->categoryName)) . '/' . $producto->productHash) }} class="link-buton-block">Ver más</a></p>
+                                    <p><a href="{{ url('/productos/' . Str::lower(Str::ascii($categoryName ?: 'sin-categoria')) . '/' . $producto->productHash) }}" class="link-buton-block">Ver más</a></p>
                                 </div>
                             </div>
                         </div>
                         @else
                     </div>
                     <div class="row" data-aos="fade-right" data-aos-delay="50" data-aos-duration="1000"
-                        id="{{ Str::lower(Str::ascii($producto->getCategoria->categoryName)) }}">
+                        id="{{ Str::lower(Str::ascii($categoryName ?: 'sin-categoria')) }}">
 
+                        @if (filled($categoryName))
                         <div class="col-12">
-                            <h2>{{ Str::upper($producto->getCategoria->categoryName) }}</h2>
+                            <h2>{{ Str::upper($categoryName) }}</h2>
                         </div>
+                        @endif
                         @php
-                        $categoria = $producto->getCategoria->categoryId;
+                        $categoria = $categoryId;
                         @endphp
                         <div class="col-12 col-md-4">
                             <div class="card  separacion-2-columnas" style="border-radius: 0;">
-                                <img src="assets/productos/big/{{ $producto->portada->imageName }}" class="card-img-top"
+                                <img src="{{ filled($categoryName) ? asset('assets/productos/big/' . optional($producto->portada)->imageName) : asset('assets/images/maquina-muestra1.png') }}" class="card-img-top"
                                     style="border-radius: 0;">
                                 <h3>{{ $producto->productName }}</h3>
+                                @if (filled($producto->productTag))
+                                <h4>{{ $producto->productTag }}</h4>
+                                @endif
                                 <div class="card-body">
-                                    <p><a href={{ url('/productos/' . Str::lower(Str::ascii($producto->getCategoria->categoryName)) . '/' . $producto->productHash) }} class="link-buton-block">Ver más</a></p>
+                                    <p><a href="{{ url('/productos/' . Str::lower(Str::ascii($categoryName ?: 'sin-categoria')) . '/' . $producto->productHash) }}" class="link-buton-block">Ver más</a></p>
                                 </div>
                             </div>
                         </div>
@@ -108,11 +125,14 @@
                         @else
                         <div class="col-12 col-md-4">
                             <div class="card  separacion-2-columnas" style="border-radius: 0;">
-                                <img src="assets/productos/big/{{ $producto->portada->imageName }}" class="card-img-top"
+                                <img src="{{ filled($categoryName) ? asset('assets/productos/big/' . optional($producto->portada)->imageName) : asset('assets/images/maquina-muestra1.png') }}" class="card-img-top"
                                     style="border-radius: 0;">
                                 <h3>{{ $producto->productName }}</h3>
+                                @if (filled($producto->productTag))
+                                <h4>{{ $producto->productTag }}</h4>
+                                @endif
                                 <div class="card-body">
-                                    <p><a href={{ url('/productos/' . Str::lower(Str::ascii($producto->getCategoria->categoryName)) . '/' . $producto->productHash) }} class="link-buton-block">Ver más</a></p>
+                                    <p><a href="{{ url('/productos/' . Str::lower(Str::ascii($categoryName ?: 'sin-categoria')) . '/' . $producto->productHash) }}" class="link-buton-block">Ver más</a></p>
                                 </div>
                             </div>
                         </div>

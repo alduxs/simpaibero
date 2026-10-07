@@ -136,11 +136,19 @@
     .card {
         border: 0px;
         h3 {
-            font-family: $font-family-md;
+            font-family: $font-family-b;
             font-size: 1.2rem;
             margin-top: 20px;
             color: $font-primary-color;
             margin-bottom: 5px;
+            padding: 0px 25px;
+        }
+        h4 {
+            font-family: $font-family;
+            font-size: 1rem;
+            margin-top: 5px;
+            color: $font-primary-color;
+            margin-bottom: 0px;
             padding: 0px 25px;
         }
     }
