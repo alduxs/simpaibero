@@ -20,7 +20,7 @@
 
     <div class="row">
         <div class="col-12">
-            <div data-table data-table-rows-per-page="5" class="card">
+            <div data-table data-table-rows-per-page="10" class="card">
 
                 <div class="card-header">
                     <h4 class="card-title">Listado</h4>
@@ -68,7 +68,7 @@
                                 <th data-table-sort="posicion">Posición</th>
                                 <th data-table-sort="hash">Hash</th>
                                 <th data-table-sort="publicado">Publicado</th>
-                                <th class="text-center" style="width: 1%;">Actions</th>
+                                <th class="text-center" style="width: 1%;">{{ __('Actions', [], 'es') }}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -117,7 +117,7 @@
                 </div>
                 <div class="card-footer border-0">
                     <div class="d-flex justify-content-between align-items-center">
-                        <div data-table-pagination-info="products"></div>
+                        <div data-table-pagination-info="productos"></div>
                         <div data-table-pagination></div>
                     </div>
                 </div>
