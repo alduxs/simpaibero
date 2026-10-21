@@ -117,7 +117,7 @@
                 </div>
                 <div class="card-footer border-0">
                     <div class="d-flex justify-content-between align-items-center">
-                        <div data-table-pagination-info="productos"></div>
+                        <div data-table-pagination-info="registros"></div>
                         <div data-table-pagination></div>
                     </div>
                 </div>

@@ -66,7 +66,7 @@
 
                                 <th data-table-sort="publicado">Publicado</th>
 
-                                <th class="text-center" style="width: 1%;">Actions</th>
+                                <th class="text-center" style="width: 1%;">{{ __('Actions', [], 'es') }}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -116,7 +116,7 @@
                 </div>
                 <div class="card-footer border-0">
                     <div class="d-flex justify-content-between align-items-center">
-                        <div data-table-pagination-info="products"></div>
+                        <div data-table-pagination-info="registros"></div>
                         <div data-table-pagination></div>
                     </div>
                 </div>

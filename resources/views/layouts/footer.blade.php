@@ -35,24 +35,24 @@
     <script src="{{ asset('assets/js/custom.js') }}" data-base-url="{{ url('/') }}"></script>
 
     <!-- Custom table -->
+    @php
+        $customTableTranslations = [
+            'empty' => __('Nothing found.', [], 'es'),
+            'deleteRow' => __('Are you sure you want to delete this row?', [], 'es'),
+            'deleteMultipleRows' => __('Are you sure you want to delete these rows?', [], 'es'),
+            'paginationInfo' => __('Showing :from to :to of :total :label', [], 'es'),
+            'confirmDeletion' => __('Confirm Deletion', [], 'es'),
+            'cancel' => __('Cancel', [], 'es'),
+            'delete' => __('Delete', [], 'es'),
+            'close' => __('Close', [], 'es'),
+        ];
+    @endphp
     <script>
         (() => {
-            const translations = @json([
-                'empty' => __('Nothing found.', [], 'es'),
-                'deleteRow' => __('Are you sure you want to delete this row?', [], 'es'),
-                'deleteMultipleRows' => __('Are you sure you want to delete these rows?', [], 'es'),
-                'paginationInfo' => __('Showing :from to :to of :total :label', [], 'es'),
-                'confirmDeletion' => __('Confirm Deletion', [], 'es'),
-                'cancel' => __('Cancel', [], 'es'),
-                'delete' => __('Delete', [], 'es'),
-                'close' => __('Close', [], 'es'),
-            ]);
+            const translations = {!! json_encode($customTableTranslations, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT) !!};
 
             const localizeCustomTable = () => {
-                const table = document.querySelector('[data-table-pagination-info="productos"]')?.closest('[data-table]');
-
-                if (table) {
-                    const paginationInfo = table.querySelector('[data-table-pagination-info]');
+                document.querySelectorAll('[data-table-pagination-info]').forEach((paginationInfo) => {
                     const match = paginationInfo?.textContent.match(/^Showing\s+(\d+)\s+to\s+(\d+)\s+of\s+(\d+)\s+(.+)$/);
 
                     if (match) {
@@ -60,15 +60,15 @@
                             .replace(':from', `<span class="fw-semibold">${match[1]}</span>`)
                             .replace(':to', `<span class="fw-semibold">${match[2]}</span>`)
                             .replace(':total', `<span class="fw-semibold">${match[3]}</span>`)
-                            .replace(':label', match[4]);
+                            .replace(':label', paginationInfo.getAttribute('data-table-pagination-info') || match[4]);
                     }
 
-                    table.querySelectorAll('.no-results td').forEach((cell) => {
+                    paginationInfo.closest('[data-table]')?.querySelectorAll('.no-results td').forEach((cell) => {
                         if (cell.textContent.trim() === 'Nothing found.') {
                             cell.textContent = translations.empty;
                         }
                     });
-                }
+                });
 
                 const modal = document.getElementById('confirm-delete-modal');
 
