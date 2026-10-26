@@ -90,6 +90,9 @@
                                 <img src="{{ filled($categoryName) ? asset('assets/productos/big/' . optional($producto->portada)->imageName) : asset('assets/images/maquina-muestra1.png') }}" class="card-img-top"
                                     style="border-radius: 0;">
                                 <h3>{{ $producto->productName }}</h3>
+                                @if (filled($producto->productTag))
+                                <h4>{{ $producto->productTag }}</h4>
+                                @endif
                                 <div class="card-body">
                                     <p><a href="{{ url('/productos/' . Str::lower(Str::ascii($categoryName ?: 'sin-categoria')) . '/' . $producto->productHash) }}" class="link-buton-block">Ver más</a></p>
                                 </div>
